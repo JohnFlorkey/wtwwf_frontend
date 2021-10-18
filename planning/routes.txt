@@ -1,0 +1,19 @@
+/		landing page, authenticated user aware
+/login			authenticate the user and redirect them to their landing page
+/signup			create new user account and redirect them to their landing page
+/user			user account landing page: recent movies/series in their watch lists, recent friend groups
+/user/edit			edit user account
+/user/friendgroups		friend groups user belongs to
+/user/friendgroups/add			create a new friend group
+/user/friendgroups/:id/invite			invite someone to a friend group
+/user/friendgroups/:id/remove			remove someone from a friend group
+/movies			user's movie watch list
+/movies/:id			detail info for movie in user's watch list
+/movies/:id/delete			remove movie from user's watch list
+/movies/:id/add			add movie to user's watch list
+/tvseries			user's tv series watch list
+/tvseries/:id			detail info for tv series in user's watch list
+/tvseries/:id/delete			remove tv series from user's watch list
+/tvseries/:id/add			add tv series to user's watch list
+/search			search API for tv or movies by title
+/discover			search API for tv or movies by attribuites other than title

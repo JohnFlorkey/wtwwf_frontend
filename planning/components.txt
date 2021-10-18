@@ -1,0 +1,54 @@
+home
+	|-->	unauthenticated landing: splash screen, login/signup
+	|-->	authenticated landing
+		|-->	watchlist summary (movies recently added to watchlist)
+			|--> movie card
+			|--> movie detail (modal?)
+		|-->	watchlist summary (tv series recently added to watchlist)
+			|--> tv series card
+			|--> tv detail (modal?)
+		|-->	friendgroup summary (friend groups recently joined (or viewed?))
+			|--> friendgroup card: first x friends in group
+
+movie watchlist: the complete list (maybe paged)
+	|--> card
+	|--> search
+
+tv series watchlist: the complete list (maybe paged)
+	|--> card
+	|--> search
+
+search: interface to search TMDB API
+	|--> title search form
+	|--> results list
+		|--> card
+		|--> detail (modal?)
+
+discover: interface to discover movies and series TMDB API
+	|--> discovery criteria form
+	|--> results list
+		|--> card
+		|--> detail (modal?)
+
+login
+
+signup
+
+user detail: user account info
+
+friendgroup list: the complete list
+	|--> friend group card
+	|--> search form
+
+
+friendgroup detail (this is a page, not a modal)
+	|--> friend group member list
+		|--> member card
+	|--> recommended movies
+		|--> card
+		|--> detail modal
+	|--> recommended tv series
+		|--> card
+		|--> detail modal
+
+new friend group form
