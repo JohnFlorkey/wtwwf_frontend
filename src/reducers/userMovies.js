@@ -1,21 +1,21 @@
 import {
-  USER_MOVIE_ADD,
+  // USER_MOVIE_ADD,
   USER_MOVIE_REMOVE,
   USER_MOVIES_LOAD,
 } from "../actions/types";
 
-const INITIAL_STATE = new Map();
+const INITIAL_STATE = {};
 
 function userMovies(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case USER_MOVIE_ADD: {
-      const newState = new Map(state);
-      newState.set(action.payload.id, action.payload);
-      return newState;
-    }
+    // case USER_MOVIE_ADD: {
+    //   const newState = new Map(state);
+    //   newState.set(action.payload.id, action.payload);
+    //   return newState;
+    // }
     case USER_MOVIE_REMOVE: {
-      const newState = new Map(state);
-      newState.delete(action.payload);
+      const newState = { ...state };
+      delete newState[action.payload];
       return newState;
     }
     case USER_MOVIES_LOAD: {

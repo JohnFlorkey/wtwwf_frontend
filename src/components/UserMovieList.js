@@ -9,15 +9,15 @@ function UserMovieList() {
   const { userMovies } = useSelector((store) => store);
 
   useEffect(() => {
-    if (userMovies.size === 0) {
+    if (Object.keys(userMovies).length === 0) {
       dispatch(getUserMovies());
     }
   }, [dispatch, userMovies]);
 
   const movies = [];
-  for (const m of userMovies.values()) {
-    movies.push(<MovieCard key={m.id} movie={m} />);
-  }
+  Object.values(userMovies).map((m) =>
+    movies.push(<MovieCard key={m.id} movie={m} />)
+  );
 
   return (
     <Box>

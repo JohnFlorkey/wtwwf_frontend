@@ -5,8 +5,8 @@ export function getUserMovies() {
   return async function (dispatch) {
     try {
       const response = await axios.get("http://localhost:3001/movies");
-      const userMovies = new Map();
-      response.data.map((m) => userMovies.set(m.id, m));
+      const userMovies = {};
+      response.data.map((m) => (userMovies[m.id] = m));
       dispatch(userMoviesLoad(userMovies));
     } catch (err) {
       console.log(err);
