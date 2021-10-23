@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_MOVIES_LOAD } from "./types";
+import { USER_MOVIES_LOAD, USER_MOVIE_REMOVE } from "./types";
 
 export function getUserMovies() {
   return async function (dispatch) {
@@ -15,6 +15,21 @@ export function getUserMovies() {
   };
 }
 
+export function removeUserMovie(movieID) {
+  return async function (dispatch) {
+    try {
+      console.log("implement remove movie from user's list");
+      dispatch(userMovieRemove(movieID));
+    } catch (err) {
+      console.log(err, "attempt to remove user movie from db failed.");
+    }
+  };
+}
+
 function userMoviesLoad(userMovies) {
   return { type: USER_MOVIES_LOAD, payload: userMovies };
+}
+
+function userMovieRemove(movieID) {
+  return { type: USER_MOVIE_REMOVE, payload: movieID };
 }

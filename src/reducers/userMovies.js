@@ -1,6 +1,6 @@
 import {
   USER_MOVIE_ADD,
-  USER_MOVIE_DELETE,
+  USER_MOVIE_REMOVE,
   USER_MOVIES_LOAD,
 } from "../actions/types";
 
@@ -13,9 +13,9 @@ function userMovies(state = INITIAL_STATE, action) {
       newState.set(action.payload.id, action.payload);
       return newState;
     }
-    case USER_MOVIE_DELETE: {
+    case USER_MOVIE_REMOVE: {
       const newState = new Map(state);
-      newState.delete(action.payload.id);
+      newState.delete(action.payload);
       return newState;
     }
     case USER_MOVIES_LOAD: {

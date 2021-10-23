@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import {
   Button,
   Card,
@@ -9,8 +10,16 @@ import {
 } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/material";
+import { removeUserMovie } from "../actions/userMovies";
 
 function MovieCard({ movie }) {
+  const dispatch = useDispatch();
+
+  const removeMovie = (movieID) => {
+    console.log("clicked the remove button");
+    dispatch(removeUserMovie(movieID));
+  };
+
   return (
     <Card sx={{ m: 1, width: 154 }}>
       <CardActionArea href="https://www.themoviedb.org/movie/11">
@@ -29,11 +38,13 @@ function MovieCard({ movie }) {
             <Typography variant="body1">{movie.release_date}</Typography>
             <Typography variant="body1">{movie.runtime}</Typography>
           </CardContent>
-          <CardActions>
-            <Button size="small">Remove</Button>
-          </CardActions>
         </Box>
       </CardActionArea>
+      <CardActions>
+        <Button size="small" onClick={() => removeMovie(movie.id)}>
+          Remove
+        </Button>
+      </CardActions>
     </Card>
   );
 }

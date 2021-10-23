@@ -16,7 +16,7 @@ function UserMovieList() {
 
   const movies = [];
   for (const m of userMovies.values()) {
-    movies.push(<MovieCard movie={m} />);
+    movies.push(<MovieCard key={m.id} movie={m} />);
   }
 
   return (
