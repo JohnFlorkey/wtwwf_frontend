@@ -11,6 +11,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/material";
 import { Popover } from "@mui/material";
 import { removeUserMovie } from "../actions/userMovies";
+import AdditionalDetail from "./AdditionalDetail";
 
 function MovieCard({ movie }) {
   const dispatch = useDispatch();
@@ -42,8 +43,8 @@ function MovieCard({ movie }) {
             <Typography variant="body1" sx={{ fontWeight: "bold" }}>
               {movie.title}
             </Typography>
-            <Typography variant="body1">{movie.release_date}</Typography>
-            <Typography variant="body1">Runtime: {movie.runtime}</Typography>
+            <Typography variant="body2">{movie.release_date}</Typography>
+            <Typography variant="body2">Runtime: {movie.runtime}</Typography>
           </CardContent>
         </Box>
         <CardActions>
@@ -64,12 +65,7 @@ function MovieCard({ movie }) {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        {/* Refactor this into its own component */}
-        <Typography sx={{ fontSize: 14 }}>Generes: {movie.genres}</Typography>
-        <Typography sx={{ fontSize: 14 }}>
-          Overview: {movie.overview}
-        </Typography>
-        <Typography sx={{ fontSize: 14 }}>Trailer: {movie.trailer}</Typography>
+        <AdditionalDetail movie={movie} />
       </Popover>
     </div>
   );
