@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
+  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
+  Popover,
+  Typography,
 } from "@mui/material";
-import { Typography } from "@mui/material";
-import { Box } from "@mui/material";
-import { Popover } from "@mui/material";
 import { removeUserMovie } from "../actions/userMovies";
 import AdditionalDetail from "./AdditionalDetail";
+import { displayDate, displayRuntime } from "../utilities/helper";
 
 function MovieCard({ movie }) {
   const dispatch = useDispatch();
@@ -43,8 +44,12 @@ function MovieCard({ movie }) {
             <Typography variant="body1" sx={{ fontWeight: "bold" }}>
               {movie.title}
             </Typography>
-            <Typography variant="body2">{movie.release_date}</Typography>
-            <Typography variant="body2">Runtime: {movie.runtime}</Typography>
+            <Typography variant="body2">
+              {displayDate(movie.release_date)}
+            </Typography>
+            <Typography variant="body2">
+              Runtime: {displayRuntime(movie.runtime)}
+            </Typography>
           </CardContent>
         </Box>
         <CardActions>
