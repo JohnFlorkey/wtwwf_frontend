@@ -1,5 +1,17 @@
 import axios from "axios";
-import { USER_MOVIES_LOAD, USER_MOVIE_REMOVE } from "./types";
+import { USER_MOVIES_LOAD, USER_MOVIE_ADD, USER_MOVIE_REMOVE } from "./types";
+
+export function addUserMovie(movie) {
+  return async function (dispatch) {
+    try {
+      // update the database
+      // then update state
+      dispatch(userMovieAdd(movie));
+    } catch (err) {
+      console.log("attempt to add movie to user list failed");
+    }
+  };
+}
 
 export function getUserMovies() {
   return async function (dispatch) {
@@ -24,6 +36,10 @@ export function removeUserMovie(movieID) {
       console.log(err, "attempt to remove user movie from db failed.");
     }
   };
+}
+
+function userMovieAdd(movie) {
+  return { type: USER_MOVIE_ADD, payload: movie };
 }
 
 function userMoviesLoad(userMovies) {

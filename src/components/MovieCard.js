@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  Box,
   Button,
   Card,
   CardActions,
@@ -10,14 +9,17 @@ import {
   Popover,
   Typography,
 } from "@mui/material";
-import { removeUserMovie } from "../actions/userMovies";
+import { addUserMovie, removeUserMovie } from "../actions/userMovies";
 import AdditionalDetail from "./AdditionalDetail";
 import { displayDate, displayRuntime } from "../utilities/helper";
 
 function MovieCard({ movie }) {
   const dispatch = useDispatch();
+  const { userMovies } = useSelector((store) => store);
+  const addMovie = (movieID) => {
+    dispatch(addUserMovie(movieID));
+  };
   const removeMovie = (movieID) => {
-    console.log("clicked the remove button");
     dispatch(removeUserMovie(movieID));
   };
 
@@ -46,17 +48,25 @@ function MovieCard({ movie }) {
           <Typography variant="body2">
             {displayDate(movie.release_date)}
           </Typography>
-          <Typography variant="body2">
-            Runtime: {displayRuntime(movie.runtime)}
-          </Typography>
+          {movie.runtime ? (
+            <Typography variant="body2">
+              Runtime: {displayRuntime(movie.runtime)}
+            </Typography>
+          ) : null}
         </CardContent>
         <CardActions>
           <Button size="small" onClick={handlePopoverOpen}>
             More
           </Button>
-          <Button size="small" onClick={() => removeMovie(movie.id)}>
-            Remove
-          </Button>
+          {userMovies[movie.id] ? (
+            <Button size="small" onClick={() => removeMovie(movie.id)}>
+              Remove
+            </Button>
+          ) : (
+            <Button size="small" onClick={() => addMovie(movie)}>
+              Add
+            </Button>
+          )}
         </CardActions>
       </Card>
       <Popover
