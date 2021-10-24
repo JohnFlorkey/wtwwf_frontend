@@ -15,21 +15,6 @@ export function getMovieSearchResults(title) {
   };
 }
 
-// export function removeUserMovie(movieID) {
-//   return async function (dispatch) {
-//     try {
-//       console.log("implement remove movie from user's list");
-//       dispatch(userMovieRemove(movieID));
-//     } catch (err) {
-//       console.log(err, "attempt to remove user movie from db failed.");
-//     }
-//   };
-// }
-
 function movieSearchResultsLoad(movieSearchResults) {
   return { type: MOVIE_SEARCH_RESULTS_LOAD, payload: movieSearchResults };
 }
-
-// function userMovieRemove(movieID) {
-//   return { type: USER_MOVIE_REMOVE, payload: movieID };
-// }
