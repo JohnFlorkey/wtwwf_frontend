@@ -39,24 +39,21 @@ function MovieCard({ movie }) {
           alt="movie poster"
           sx={{ maxWidth: 154 }}
         />
-        <Box>
-          <CardContent>
-            <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-              {movie.title}
-            </Typography>
-            <Typography variant="body2">
-              {displayDate(movie.release_date)}
-            </Typography>
-            <Typography variant="body2">
-              Runtime: {displayRuntime(movie.runtime)}
-            </Typography>
-          </CardContent>
-        </Box>
+        <CardContent>
+          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+            {movie.title}
+          </Typography>
+          <Typography variant="body2">
+            {displayDate(movie.release_date)}
+          </Typography>
+          <Typography variant="body2">
+            Runtime: {displayRuntime(movie.runtime)}
+          </Typography>
+        </CardContent>
         <CardActions>
           <Button size="small" onClick={handlePopoverOpen}>
             More
           </Button>
-
           <Button size="small" onClick={() => removeMovie(movie.id)}>
             Remove
           </Button>

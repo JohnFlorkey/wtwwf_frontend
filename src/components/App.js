@@ -1,11 +1,11 @@
 import React from "react";
-import UserMovieList from "./UserMovieList";
+import Routes from "./Routes";
 
 function App() {
   return (
     <div className="App">
       <h1>The App</h1>
-      <UserMovieList />
+      <Routes />
     </div>
   );
 }
