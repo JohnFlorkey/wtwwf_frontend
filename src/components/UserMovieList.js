@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserMovies } from "../actions/userMovies";
-import MovieCard from "./MovieCard";
 import { Box } from "@mui/material";
+import MovieList from "./MovieList";
 
 function UserMovieList() {
   const dispatch = useDispatch();
@@ -15,16 +15,12 @@ function UserMovieList() {
   }, [dispatch, userMovies]);
 
   const movies = [];
-  Object.values(userMovies).map((m) =>
-    movies.push(<MovieCard key={m.id} movie={m} />)
-  );
+  Object.values(userMovies).map((m) => movies.push(m));
 
   return (
     <Box>
       The User's Movie List
-      <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        {movies}
-      </Box>
+      <MovieList movies={movies} />
     </Box>
   );
 }
