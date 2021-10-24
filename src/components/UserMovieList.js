@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserMovies } from "../actions/userMovies";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import MovieList from "./MovieList";
 
 function UserMovieList() {
@@ -19,7 +19,7 @@ function UserMovieList() {
 
   return (
     <Box>
-      The User's Movie List
+      <Typography variant="h4">My Movies</Typography>
       <MovieList movies={movies} />
     </Box>
   );

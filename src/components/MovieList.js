@@ -5,7 +5,6 @@ import MovieCard from "./MovieCard";
 function MovieList({ movies }) {
   return (
     <Box>
-      A Movie List
       <Box sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         {movies.map((m) => (
           <MovieCard key={m.id} movie={m} />
