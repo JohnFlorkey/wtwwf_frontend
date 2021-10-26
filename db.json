@@ -55,19 +55,70 @@
 			"vote_average": 79
 		}
 	],
-	"tvSeries": [
+	"tv": [
 		{
-			"id": 1,
-			"title": "The Clone Wars"
-		},
-		{
-			"id": 2,
-			"title": "The Bad Batch"
-		},
-		{
-			"id": 3,
-			"title": "The Mandalorian"
-		}
+			"backdrop_path": "/AdJgkXb8oLI8e4rsk8XzkvABIuw.jpg",
+			"first_air_date": "2014-10-13",
+			"genre_ids": [
+					10759,
+					16
+			],
+			"id": 60554,
+			"name": "Star Wars Rebels",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Star Wars Rebels",
+			"overview": "Set between the events of Star Wars: Episodes III and IV, the story unfolds during a dark time when the evil Galactic Empire is tightening its grip of power on the galaxy. Imperial forces have occupied a remote planet and are ruining the lives of its people. The motley but clever crew of the starship Ghost — cowboy Jedi Kanan, ace pilot Hera, street-smart teenager Ezra, the “muscle” Zeb, warrior firebrand Sabine, and cantankerous old astromech droid Chopper — is among a select few who are brave enough to stand against the Empire. Together, they will face threatening new villains, encounter colorful adversaries, embark on thrilling adventures, and become heroes with the power to ignite a rebellion.",
+			"popularity": 59.403,
+			"poster_path": "https://image.tmdb.org/t/p/w154/vOUxo5sfXyQPIoF8rtYK1OVVBPi.jpg",
+			"vote_average": 7.7,
+			"vote_count": 468
+	},
+	{
+			"backdrop_path": "/m6eRgkR1KC6Mr6gKx6gKCzSn6vD.jpg",
+			"first_air_date": "2008-10-03",
+			"genre_ids": [
+					10759,
+					16,
+					10765
+			],
+			"id": 4194,
+			"name": "Star Wars: The Clone Wars",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Star Wars: The Clone Wars",
+			"overview": "Yoda, Obi-Wan Kenobi, Anakin Skywalker, Mace Windu and other Jedi Knights lead the Grand Army of the Republic against the droid army of the Separatists.",
+			"popularity": 74.21,
+			"poster_path": "https://image.tmdb.org/t/p/w154/e1nWfnnCVqxS2LeTO3dwGyAsG2V.jpg",
+			"vote_average": 8.5,
+			"vote_count": 1256
+	},
+	{
+		"backdrop_path": "/9ijMGlJKqcslswWUzTEwScm82Gs.jpg",
+		"first_air_date": "2019-11-12",
+		"genre_ids": [
+				10765,
+				10759,
+				37,
+				18
+		],
+		"id": 82856,
+		"name": "The Mandalorian",
+		"origin_country": [
+				"US"
+		],
+		"original_language": "en",
+		"original_name": "The Mandalorian",
+		"overview": "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
+		"popularity": 234.396,
+		"poster_path": "https://image.tmdb.org/t/p/w154/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+		"vote_average": 8.5,
+		"vote_count": 6898
+}
 	],
 	"users": [
 		{
@@ -84,6 +135,49 @@
 			]
 		}
 	],
+	"tvsearchresults": [
+		{
+				"backdrop_path": "/9ijMGlJKqcslswWUzTEwScm82Gs.jpg",
+				"first_air_date": "2019-11-12",
+				"genre_ids": [
+						10765,
+						10759,
+						37,
+						18
+				],
+				"id": 82856,
+				"name": "The Mandalorian",
+				"origin_country": [
+						"US"
+				],
+				"original_language": "en",
+				"original_name": "The Mandalorian",
+				"overview": "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
+				"popularity": 234.396,
+				"poster_path": "https://image.tmdb.org/t/p/w154/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+				"vote_average": 8.5,
+				"vote_count": 6898
+		},
+		{
+				"backdrop_path": "/dKH2l6WrrYS3tGp4JD3Y0AtVzPu.jpg",
+				"first_air_date": "2020-05-04",
+				"genre_ids": [
+						99
+				],
+				"id": 101978,
+				"name": "Disney Gallery / Star Wars: The Mandalorian",
+				"origin_country": [
+						"US"
+				],
+				"original_language": "en",
+				"original_name": "Disney Gallery / Star Wars: The Mandalorian",
+				"overview": "Executive producer Jon Favreau invites the cast and crew of The Mandalorian to share an unprecedented look at the making of the series. Each chapter explores a different facet of the first live-action Star Wars television show through interviews, never-before-seen footage, and roundtable conversations hosted by Favreau himself.",
+				"popularity": 21.053,
+				"poster_path": "https://image.tmdb.org/t/p/w154/6Hc2eHp59iTyMqkhcumNovq2l6y.jpg",
+				"vote_average": 8,
+				"vote_count": 31
+		}
+],
 	"moviesearchresults": [
 		{
 			"id": 1,
@@ -573,5 +667,410 @@
 				"vote_average": 7.8,
 				"vote_count": 445
 		}
+],
+"tvdiscoverresults": [
+	{
+			"backdrop_path": "/xAKMj134XHQVNHLC6rWsccLMenG.jpg",
+			"first_air_date": "2021-10-12",
+			"genre_ids": [
+					10765,
+					35,
+					80
+			],
+			"id": 90462,
+			"name": "Chucky",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Chucky",
+			"overview": "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
+			"popularity": 6336.725,
+			"poster_path": "https://image.tmdb.org/t/p/w154/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
+			"vote_average": 8,
+			"vote_count": 931
+	},
+	{
+			"backdrop_path": "/qw3J9cNeLioOLoR68WX7z79aCdK.jpg",
+			"first_air_date": "2021-09-17",
+			"genre_ids": [
+					10759,
+					9648,
+					18
+			],
+			"id": 93405,
+			"name": "Squid Game",
+			"origin_country": [
+					"KR"
+			],
+			"original_language": "ko",
+			"original_name": "오징어 게임",
+			"overview": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games—with high stakes. But, a tempting prize awaits the victor.",
+			"popularity": 4310.846,
+			"poster_path": "https://image.tmdb.org/t/p/w154/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",
+			"vote_average": 7.8,
+			"vote_count": 8153
+	},
+	{
+			"backdrop_path": "/oC9SgtJTDCEpWnTBtVGoAvjl5hb.jpg",
+			"first_air_date": "2006-09-18",
+			"genre_ids": [
+					10767
+			],
+			"id": 1991,
+			"name": "Rachael Ray",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Rachael Ray",
+			"overview": "Rachael Ray, also known as The Rachael Ray Show, is an American talk show starring Rachael Ray that debuted in syndication in the United States and Canada on September 18, 2006. It is filmed at Chelsea Television Studios in New York City. The show's 8th season premiered on September 9, 2013, and became the last Harpo show in syndication to switch to HD with a revamped studio. In January 2012, CBS Television Distribution announced a two-year renewal for the show, taking it through the 2013–14 season.",
+			"popularity": 2237.508,
+			"poster_path": "https://image.tmdb.org/t/p/w154/dsAJhCLYX1fiNRoiiJqR6Up4aJ.jpg",
+			"vote_average": 5.4,
+			"vote_count": 32
+	},
+	{
+			"backdrop_path": "/9OYu6oDLIidSOocW3JTGtd2Oyqy.jpg",
+			"first_air_date": "2017-09-25",
+			"genre_ids": [
+					18
+			],
+			"id": 71712,
+			"name": "The Good Doctor",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "The Good Doctor",
+			"overview": "Shaun Murphy, a young surgeon with autism and savant syndrome, relocates from a quiet country life to join a prestigious hospital's surgical unit. Unable to personally connect with those around him, Shaun uses his extraordinary medical gifts to save lives and challenge the skepticism of his colleagues.",
+			"popularity": 1028.724,
+			"poster_path": "https://image.tmdb.org/t/p/w154/cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg",
+			"vote_average": 8.6,
+			"vote_count": 9628
+	},
+	{
+			"backdrop_path": "/e92qfYRVYUL602ztyEoujUtXlS1.jpg",
+			"first_air_date": "2018-09-09",
+			"genre_ids": [
+					9648,
+					80,
+					18
+			],
+			"id": 78191,
+			"name": "You",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "You",
+			"overview": "A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.",
+			"popularity": 1285.942,
+			"poster_path": "https://image.tmdb.org/t/p/w154/yxIdKGEjagaLs5kMjw92kAHmopH.jpg",
+			"vote_average": 8.1,
+			"vote_count": 1537
+	},
+	{
+			"backdrop_path": "/ccaZ3yyyC6rcMAQrlLZ51FpahNO.jpg",
+			"first_air_date": "2016-01-25",
+			"genre_ids": [
+					80,
+					10765
+			],
+			"id": 63174,
+			"name": "Lucifer",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Lucifer",
+			"overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+			"popularity": 1198.237,
+			"poster_path": "https://image.tmdb.org/t/p/w154/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+			"vote_average": 8.5,
+			"vote_count": 10827
+	},
+	{
+			"backdrop_path": "/fCgTw8Tpe6R5SyB1UnLad2gPbq4.jpg",
+			"first_air_date": "2021-08-23",
+			"genre_ids": [
+					18,
+					10766,
+					35
+			],
+			"id": 133372,
+			"name": "Meet",
+			"origin_country": [
+					"IN"
+			],
+			"original_language": "hi",
+			"original_name": "मीत",
+			"overview": "Despite her efforts to provide for her family, Meets disregard for societal gender norms and her nonconformist job as a delivery agent make her an unsuitable girl in the eyes of her family.",
+			"popularity": 1417.38,
+			"poster_path": "https://image.tmdb.org/t/p/w154/9X7FovF5n8NQUHUPJYYfxRlF3yp.jpg",
+			"vote_average": 4.5,
+			"vote_count": 2
+	},
+	{
+			"backdrop_path": "/1HiLMi66dO8Ia7EsPT2D9FwK5tL.jpg",
+			"first_air_date": "2021-09-28",
+			"genre_ids": [
+					18,
+					10765,
+					10759
+			],
+			"id": 128839,
+			"name": "La Brea",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "La Brea",
+			"overview": "An epic adventure begins when a massive sinkhole opens in the middle of Los Angeles, pulling hundreds of people and buildings into its depths. Those who fell in find themselves in a mysterious and dangerous primeval land, where they have no choice but to band together to survive. Meanwhile, the rest of the world desperately seeks to understand what happened. In the search for answers, one family torn apart by this disaster will have to unlock the secrets of this inexplicable event to find a way back to each other.",
+			"popularity": 1183.288,
+			"poster_path": "https://image.tmdb.org/t/p/w154/nsoRsiUEakEO7VMIoa6Jkw4cPHs.jpg",
+			"vote_average": 8,
+			"vote_count": 42
+	},
+	{
+			"backdrop_path": "/bxU79lpl8ZQAVJ72155kqWkuqMu.jpg",
+			"first_air_date": "2019-01-11",
+			"genre_ids": [
+					35,
+					18
+			],
+			"id": 81356,
+			"name": "Sex Education",
+			"origin_country": [
+					"GB"
+			],
+			"original_language": "en",
+			"original_name": "Sex Education",
+			"overview": "Inexperienced Otis channels his sex therapist mom when he teams up with rebellious Maeve to set up an underground sex therapy clinic at school.",
+			"popularity": 1066.76,
+			"poster_path": "https://image.tmdb.org/t/p/w154/8j12tohv1NBZNmpU93f47sAKBbw.jpg",
+			"vote_average": 8.4,
+			"vote_count": 4976
+	},
+	{
+			"backdrop_path": "/yjsXtps0rw36UB8TomSjI4y4zvR.jpg",
+			"first_air_date": "2021-10-14",
+			"genre_ids": [
+					80,
+					18,
+					9648,
+					10759
+			],
+			"id": 110356,
+			"name": "My Name",
+			"origin_country": [
+					"KR"
+			],
+			"original_language": "ko",
+			"original_name": "마이 네임",
+			"overview": "Following her father's murder, a revenge-driven woman puts her trust in a powerful crime boss — and enters the police force under his direction.",
+			"popularity": 971.897,
+			"poster_path": "https://image.tmdb.org/t/p/w154/h9p1zxKzti35Aqe6xpwkP9NlG7p.jpg",
+			"vote_average": 8.8,
+			"vote_count": 91
+	},
+	{
+			"backdrop_path": "/uAWB8qOs7L6zGTwxAbeT97AsJk6.jpg",
+			"first_air_date": "2021-09-23",
+			"genre_ids": [
+					10765,
+					18
+			],
+			"id": 93740,
+			"name": "Foundation",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Foundation",
+			"overview": "Follow a band of exiles on their monumental journey to save humanity and rebuild civilization amid the fall of the Galactic Empire.",
+			"popularity": 892.91,
+			"poster_path": "https://image.tmdb.org/t/p/w154/A1fXGFxDifQzj08OlaGTVcnXHyd.jpg",
+			"vote_average": 8.2,
+			"vote_count": 242
+	},
+	{
+			"backdrop_path": "/wvdWb5kTQipdMDqCclC6Y3zr4j3.jpg",
+			"first_air_date": "2010-10-31",
+			"genre_ids": [
+					10759,
+					18,
+					10765
+			],
+			"id": 1402,
+			"name": "The Walking Dead",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "The Walking Dead",
+			"overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+			"popularity": 866.214,
+			"poster_path": "https://image.tmdb.org/t/p/w154/w21lgYIi9GeUH5dO8l3B9ARZbCB.jpg",
+			"vote_average": 8.1,
+			"vote_count": 11910
+	},
+	{
+			"backdrop_path": "/eyG9srihv68ScRdEbJZj66WT4O0.jpg",
+			"first_air_date": "2014-10-07",
+			"genre_ids": [
+					18,
+					10765
+			],
+			"id": 60735,
+			"name": "The Flash",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "The Flash",
+			"overview": "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+			"popularity": 821.138,
+			"poster_path": "https://image.tmdb.org/t/p/w154/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg",
+			"vote_average": 7.8,
+			"vote_count": 8631
+	},
+	{
+			"backdrop_path": "/yF7G00lb3AbCSa8ZPgR8M4nFtFL.jpg",
+			"first_air_date": "2020-09-14",
+			"genre_ids": [],
+			"id": 107602,
+			"name": "5 chefs dans ma cuisine",
+			"origin_country": [
+					"CA"
+			],
+			"original_language": "fr",
+			"original_name": "5 chefs dans ma cuisine",
+			"overview": "",
+			"popularity": 1116.172,
+			"poster_path": "https://image.tmdb.org/t/p/w154/2UuRWSoLCTohtKOTpKI1lwL5GrD.jpg",
+			"vote_average": 1.5,
+			"vote_count": 4
+	},
+	{
+			"backdrop_path": "/vFMvVG4KyMGwxOi9EB9JeIkLdvj.jpg",
+			"first_air_date": "2021-10-06",
+			"genre_ids": [
+					18
+			],
+			"id": 133086,
+			"name": "The Five Juanas",
+			"origin_country": [
+					"MX"
+			],
+			"original_language": "es",
+			"original_name": "La venganza de las Juanas",
+			"overview": "Five women with the same birthmark set out to unravel the truth about their pasts and discover a tragic web of lies spun by a powerful politician.",
+			"popularity": 733.043,
+			"poster_path": "https://image.tmdb.org/t/p/w154/iFffOCcrtf5mSoGKd2J31d2b5yg.jpg",
+			"vote_average": 7.4,
+			"vote_count": 74
+	},
+	{
+			"backdrop_path": "/b3YoKUxr9fHNLgWEplNBYCtBy8K.jpg",
+			"first_air_date": "2019-08-16",
+			"genre_ids": [
+					18
+			],
+			"id": 90239,
+			"name": "El Juego de las Llaves",
+			"origin_country": [
+					"MX",
+					"US"
+			],
+			"original_language": "es",
+			"original_name": "El Juego de las Llaves",
+			"overview": "A casual encounter between Adriana and Sergio, two former high school friends, triggers the beginning of the game of the keys where four couples generate new sexual and emotional combinations in a dangerous and lustful game.",
+			"popularity": 735.351,
+			"poster_path": "https://image.tmdb.org/t/p/w154/9NQybnf78WiXWcxPaf7cyF09bOm.jpg",
+			"vote_average": 7.5,
+			"vote_count": 1399
+	},
+	{
+			"backdrop_path": "/wiE9doxiLwq3WCGamDIOb2PqBqc.jpg",
+			"first_air_date": "2013-09-12",
+			"genre_ids": [
+					80,
+					18
+			],
+			"id": 60574,
+			"name": "Peaky Blinders",
+			"origin_country": [
+					"GB"
+			],
+			"original_language": "en",
+			"original_name": "Peaky Blinders",
+			"overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
+			"popularity": 736.134,
+			"poster_path": "https://image.tmdb.org/t/p/w154/bGZn5RVzMMXju4ev7xbl1aLdXqq.jpg",
+			"vote_average": 8.6,
+			"vote_count": 4076
+	},
+	{
+			"backdrop_path": "/1vgdmeW6keP47DQ1tGwfVCdUKqu.jpg",
+			"first_air_date": "2020-10-12",
+			"genre_ids": [
+					35
+			],
+			"id": 111551,
+			"name": "Haireta mou ton Platano",
+			"origin_country": [
+					"GR"
+			],
+			"original_language": "el",
+			"original_name": "Χαιρέτα μου τον Πλάτανο",
+			"overview": "The small Greek village of Platanos (Plane Tree) buries the elderly recluse Vangelas and notifies the deceased's estranged children and grandchildren about his death. Vangela's will leaves 3 million euros to his family, but requires them to move to the village and obey certain terms in order to inherit.",
+			"popularity": 1030.019,
+			"poster_path": "https://image.tmdb.org/t/p/w154/vAu6or1W4G1q7wJxQfDmATtnIg.jpg",
+			"vote_average": 6,
+			"vote_count": 2
+	},
+	{
+			"backdrop_path": "/qZtAf4Z1lazGQoYVXiHOrvLr5lI.jpg",
+			"first_air_date": "2017-01-26",
+			"genre_ids": [
+					9648,
+					18,
+					80
+			],
+			"id": 69050,
+			"name": "Riverdale",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "Riverdale",
+			"overview": "Set in the present, the series offers a bold, subversive take on Archie, Betty, Veronica and their friends, exploring the surreality of small-town life, the darkness and weirdness bubbling beneath Riverdale’s wholesome facade.",
+			"popularity": 710.833,
+			"poster_path": "https://image.tmdb.org/t/p/w154/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg",
+			"vote_average": 8.6,
+			"vote_count": 12043
+	},
+	{
+			"backdrop_path": "/4N6zEMfZ57zNEQcM8gWeERFupMv.jpg",
+			"first_air_date": "2021-08-11",
+			"genre_ids": [
+					16,
+					10759,
+					10765
+			],
+			"id": 91363,
+			"name": "What If...?",
+			"origin_country": [
+					"US"
+			],
+			"original_language": "en",
+			"original_name": "What If...?",
+			"overview": "Taking inspiration from the comic books of the same name, each episode explores a pivotal moment from the Marvel Cinematic Universe and turns it on its head, leading the audience into uncharted territory.",
+			"popularity": 593.737,
+			"poster_path": "https://image.tmdb.org/t/p/w154/lztz5XBMG1x6Y5ubz7CxfPFsAcW.jpg",
+			"vote_average": 8.5,
+			"vote_count": 2391
+	}
 ]
 }

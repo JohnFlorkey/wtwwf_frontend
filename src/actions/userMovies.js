@@ -30,6 +30,8 @@ export function getUserMovies() {
 export function removeUserMovie(movieID) {
   return async function (dispatch) {
     try {
+      // update the database
+      // then update state
       console.log("implement remove movie from user's list");
       dispatch(userMovieRemove(movieID));
     } catch (err) {

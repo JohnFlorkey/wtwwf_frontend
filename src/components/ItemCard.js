@@ -9,18 +9,19 @@ import {
   Popover,
   Typography,
 } from "@mui/material";
-import { addUserMovie, removeUserMovie } from "../actions/userMovies";
 import AdditionalDetail from "./AdditionalDetail";
 import { displayDate, displayRuntime } from "../utilities/helper";
+import { addUserItem, removeUserItem } from "../actions/userItem";
 
-function MovieCard({ movie }) {
+function ItemCard({ item }) {
   const dispatch = useDispatch();
-  const { userMovies } = useSelector((store) => store);
-  const addMovie = (movieID) => {
-    dispatch(addUserMovie(movieID));
+
+  const addItem = (item) => {
+    dispatch(addUserItem(item));
   };
-  const removeMovie = (movieID) => {
-    dispatch(removeUserMovie(movieID));
+
+  const removeItem = (itemID) => {
+    dispatch(removeUserItem(itemID));
   };
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -32,25 +33,33 @@ function MovieCard({ movie }) {
   };
   const open = Boolean(anchorEl);
 
+  const { userMovies, userTV } = useSelector((store) => store);
+  let inUserItemList = false;
+  if (item.title) {
+    inUserItemList = Boolean(userMovies[item.id]);
+  } else if (item.name) {
+    inUserItemList = Boolean(userTV[item.id]);
+  }
+
   return (
     <div>
       <Card sx={{ m: 1, width: 154 }}>
         <CardMedia
           component="img"
-          image={movie.poster_path}
+          image={item.poster_path}
           alt="movie poster"
           sx={{ maxWidth: 154 }}
         />
         <CardContent>
           <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-            {movie.title}
+            {item.title}
           </Typography>
           <Typography variant="body2">
-            {displayDate(movie.release_date)}
+            {displayDate(item.release_date)}
           </Typography>
-          {movie.runtime ? (
+          {item.runtime ? (
             <Typography variant="body2">
-              Runtime: {displayRuntime(movie.runtime)}
+              Runtime: {displayRuntime(item.runtime)}
             </Typography>
           ) : null}
         </CardContent>
@@ -58,12 +67,12 @@ function MovieCard({ movie }) {
           <Button size="small" onClick={handlePopoverOpen}>
             More
           </Button>
-          {userMovies[movie.id] ? (
-            <Button size="small" onClick={() => removeMovie(movie.id)}>
+          {inUserItemList ? (
+            <Button size="small" onClick={() => removeItem(item)}>
               Remove
             </Button>
           ) : (
-            <Button size="small" onClick={() => addMovie(movie)}>
+            <Button size="small" onClick={() => addItem(item)}>
               Add
             </Button>
           )}
@@ -77,10 +86,10 @@ function MovieCard({ movie }) {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <AdditionalDetail movie={movie} />
+        <AdditionalDetail item={item} />
       </Popover>
     </div>
   );
 }
 
-export default MovieCard;
+export default ItemCard;

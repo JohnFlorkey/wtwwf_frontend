@@ -13,11 +13,28 @@ export function NavBar() {
           <Button component={RouterLink} to="/movies" sx={{ color: "white" }}>
             <Typography sx={{ color: "white" }}>My Movies </Typography>
           </Button>
-          <Button component={RouterLink} to="/search">
-            <Typography sx={{ color: "white" }}>Search</Typography>
+          <Button component={RouterLink} to="/tv" sx={{ color: "white" }}>
+            <Typography sx={{ color: "white" }}>My TV </Typography>
           </Button>
-          <Button component={RouterLink} to="/discover" sx={{ color: "white" }}>
-            <Typography sx={{ color: "white" }}>Discover </Typography>
+          <Button component={RouterLink} to="/search/movies">
+            <Typography sx={{ color: "white" }}>Search Movies</Typography>
+          </Button>
+          <Button component={RouterLink} to="/search/tv">
+            <Typography sx={{ color: "white" }}>Search TV</Typography>
+          </Button>
+          <Button
+            component={RouterLink}
+            to="/discover/movies"
+            sx={{ color: "white" }}
+          >
+            <Typography sx={{ color: "white" }}>Discover Movies</Typography>
+          </Button>
+          <Button
+            component={RouterLink}
+            to="/discover/tv"
+            sx={{ color: "white" }}
+          >
+            <Typography sx={{ color: "white" }}>Discover TV</Typography>
           </Button>
         </Toolbar>
       </AppBar>
