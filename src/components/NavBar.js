@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AppBar,
   Box,
@@ -9,8 +10,21 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import { getUser } from "../actions/user";
 
 function NavBar() {
+  const dispatch = useDispatch();
+  const { user } = useSelector((store) => store);
+
+  /**
+   * temporary for mocking user state so we can get the user based components created
+   */
+  useEffect(() => {
+    if (Object.keys(user).length === 0) {
+      dispatch(getUser(1));
+    }
+  }, [dispatch, user]);
+
   const history = useHistory();
   const [searchAnchorEl, setSearchAnchorEl] = useState(null);
   const handleSearchMenuOpen = (evt) => {
@@ -46,6 +60,23 @@ function NavBar() {
   };
   const isDiscoverMenuOpen = Boolean(discoverAnchorEl);
 
+  const [userAnchorEl, setUserAnchorEl] = useState(null);
+  const handleUserMenuOpen = (evt) => {
+    setUserAnchorEl(evt.currentTarget);
+  };
+  const handleUserMenuClose = () => {
+    setUserAnchorEl(null);
+  };
+  const handleUserProfileClick = () => {
+    handleUserMenuClose();
+    history.push("/user/profile");
+  };
+  const handleUserFriendGroupsClick = () => {
+    handleUserMenuClose();
+    history.push("/user/friendGroups");
+  };
+  const isUserMenuOpen = Boolean(userAnchorEl);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
@@ -64,6 +95,9 @@ function NavBar() {
           </Button>
           <Button onClick={handleDiscoverMenuOpen}>
             <Typography sx={{ color: "white" }}>Discover</Typography>
+          </Button>
+          <Button onClick={handleUserMenuOpen}>
+            <Typography sx={{ color: "white" }}>{user.username}</Typography>
           </Button>
           <Menu
             anchorEl={searchAnchorEl}
@@ -88,6 +122,20 @@ function NavBar() {
           >
             <MenuItem onClick={handleDiscoverMoviesClick}>Movies</MenuItem>
             <MenuItem onClick={handleDiscoverTVClick}>TV</MenuItem>
+          </Menu>
+          <Menu
+            anchorEl={userAnchorEl}
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            id="user-menu"
+            keepMounted
+            transformOrigin={{ vertical: "top", horizontal: "right" }}
+            open={isUserMenuOpen}
+            onClose={handleUserMenuClose}
+          >
+            <MenuItem onClick={handleUserProfileClick}>MY Profile</MenuItem>
+            <MenuItem onClick={handleUserFriendGroupsClick}>
+              My Friend Groups
+            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

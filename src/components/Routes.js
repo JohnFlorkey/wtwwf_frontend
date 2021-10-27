@@ -6,6 +6,8 @@ import SearchMovies from "./SearchMovies";
 import SearchTV from "./SearchTV";
 import DiscoverMoviesResultsList from "./DiscoverMoviesResultsList";
 import DiscoverTVResultsList from "./DiscoverTVResultsList";
+import UserProfileForm from "./UserProfileForm";
+import FriendGroupList from "./FriendGroupList";
 
 function Routes() {
   return (
@@ -27,6 +29,12 @@ function Routes() {
       </Route>
       <Route path="/search/tv">
         <SearchTV />
+      </Route>
+      <Route path="/user/profile">
+        <UserProfileForm />
+      </Route>
+      <Route path="/user/friendGroups">
+        <FriendGroupList />
       </Route>
     </Switch>
   );

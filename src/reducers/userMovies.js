@@ -9,7 +9,6 @@ const INITIAL_STATE = {};
 function userMovies(state = INITIAL_STATE, action) {
   switch (action.type) {
     case USER_MOVIE_ADD: {
-      console.log(action);
       return { ...state, [action.payload.id]: action.payload };
     }
     case USER_MOVIE_REMOVE: {
