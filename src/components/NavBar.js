@@ -5,6 +5,7 @@ import {
   AppBar,
   Box,
   Button,
+  Divider,
   Menu,
   MenuItem,
   Toolbar,
@@ -69,11 +70,11 @@ function NavBar() {
   };
   const handleUserProfileClick = () => {
     handleUserMenuClose();
-    history.push("/user/profile");
+    history.push("/profile");
   };
   const handleUserFriendGroupsClick = () => {
     handleUserMenuClose();
-    history.push("/user/friendGroups");
+    history.push("/friendGroups");
   };
   const isUserMenuOpen = Boolean(userAnchorEl);
 
@@ -81,22 +82,42 @@ function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            What To Watch With Friends
+          <Typography
+            variant="h6"
+            component={RouterLink}
+            to="/"
+            sx={{ color: "white", flexGrow: 1 }}
+          >
+            WWTF
           </Typography>
-          <Button component={RouterLink} to="/movies" sx={{ color: "white" }}>
+          <Button
+            component={RouterLink}
+            to="/movies"
+            sx={{ color: "white", mx: 1 }}
+          >
             <Typography sx={{ color: "white" }}>My Movies </Typography>
           </Button>
-          <Button component={RouterLink} to="/tv" sx={{ color: "white" }}>
+          <Button
+            component={RouterLink}
+            to="/tv"
+            sx={{ color: "white", mx: 1 }}
+          >
             <Typography sx={{ color: "white" }}>My TV </Typography>
           </Button>
-          <Button onClick={handleSearchMenuOpen}>
+          <Button
+            component={RouterLink}
+            to="/friendGroups"
+            sx={{ color: "white", mx: 1 }}
+          >
+            <Typography sx={{ color: "white" }}>My Friend Groups</Typography>
+          </Button>
+          <Button onClick={handleSearchMenuOpen} sx={{ mx: 1 }}>
             <Typography sx={{ color: "white" }}>Search</Typography>
           </Button>
-          <Button onClick={handleDiscoverMenuOpen}>
+          <Button onClick={handleDiscoverMenuOpen} sx={{ mx: 1 }}>
             <Typography sx={{ color: "white" }}>Discover</Typography>
           </Button>
-          <Button onClick={handleUserMenuOpen}>
+          <Button onClick={handleUserMenuOpen} sx={{ mx: 1 }}>
             <Typography sx={{ color: "white" }}>{user.username}</Typography>
           </Button>
           <Menu
@@ -132,7 +153,9 @@ function NavBar() {
             open={isUserMenuOpen}
             onClose={handleUserMenuClose}
           >
-            <MenuItem onClick={handleUserProfileClick}>MY Profile</MenuItem>
+            <Typography sx={{ mx: 2 }}>Manage</Typography>
+            <Divider />
+            <MenuItem onClick={handleUserProfileClick}>My Profile</MenuItem>
             <MenuItem onClick={handleUserFriendGroupsClick}>
               My Friend Groups
             </MenuItem>
