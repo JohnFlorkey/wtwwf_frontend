@@ -13,8 +13,8 @@ function SearchMoviesResultsList() {
     }
   }, [dispatch, userMovies]);
 
-  return movieSearchResults.length > 0 ? (
-    <ItemList items={movieSearchResults} />
+  return movieSearchResults.results.length > 0 ? (
+    <ItemList items={movieSearchResults.results} />
   ) : null;
 }
 

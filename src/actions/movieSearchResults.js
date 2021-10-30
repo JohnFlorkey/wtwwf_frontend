@@ -4,9 +4,7 @@ import { MOVIE_SEARCH_RESULTS_LOAD } from "./types";
 export function getMovieSearchResults(title) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(
-        "http://localhost:3001/moviesearchresults"
-      );
+      const response = await axios.get("http://localhost:3002/search/movies");
       dispatch(movieSearchResultsLoad(response.data));
     } catch (err) {
       console.log(err);
