@@ -12,7 +12,6 @@ import {
 import AdditionalDetail from "./AdditionalDetail";
 import { displayDate, displayRuntime } from "../utilities/helper";
 import { addUserItem, removeUserItem } from "../actions/userItem";
-import { IMAGE_URL } from "../utilities/config";
 
 function ItemCard({ item }) {
   const dispatch = useDispatch();
@@ -47,7 +46,7 @@ function ItemCard({ item }) {
       <Card sx={{ m: 1, width: 154 }}>
         <CardMedia
           component="img"
-          image={IMAGE_URL + item.posterPath}
+          image={item.posterPath}
           alt="movie poster"
           sx={{ maxWidth: 154 }}
         />
