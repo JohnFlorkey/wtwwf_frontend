@@ -1,12 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import { Button, TextField } from "@mui/material";
 import useForm from "../customHooks/useForm";
-// import { getMovieSearchResults } from "../actions/movieSearchResults";
-import { getSearchResults } from "../actions/searchResults";
 
 function SearchForm({ type }) {
-  const dispatch = useDispatch();
+  const history = useHistory();
   const INITIAL_STATE_SEARCH_FORM = { title: "" };
   const [formData, addFormData] = useForm(INITIAL_STATE_SEARCH_FORM);
   const setFormData = (evt) => {
@@ -15,7 +13,9 @@ function SearchForm({ type }) {
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    dispatch(getSearchResults(type, formData.title));
+    // when submitting the search form we're always looking for page 1 of results
+    const page = 1;
+    history.push(`/search/movies?title=${formData.title}&page=${page}`);
   };
 
   return (

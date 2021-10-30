@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   Button,
   Card,
@@ -13,7 +13,7 @@ import AdditionalDetail from "./AdditionalDetail";
 import { displayDate, displayRuntime } from "../utilities/helper";
 import { addUserItem, removeUserItem } from "../actions/userItem";
 
-function ItemCard({ item }) {
+function ItemCard({ item, inUserItemList }) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
@@ -32,14 +32,6 @@ function ItemCard({ item }) {
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl);
-
-  const { userMovies, userTV } = useSelector((store) => store);
-  let inUserItemList = false;
-  if (item.title) {
-    inUserItemList = Boolean(userMovies[item.id]);
-  } else if (item.name) {
-    inUserItemList = Boolean(userTV[item.id]);
-  }
 
   return (
     <div>
