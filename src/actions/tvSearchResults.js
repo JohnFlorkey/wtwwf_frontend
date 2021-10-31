@@ -1,10 +1,17 @@
 import axios from "axios";
-import { TV_SEARCH_RESULTS_LOAD } from "./types";
+import { TV_SEARCH_RESULTS_CLEAR, TV_SEARCH_RESULTS_LOAD } from "./types";
+import { WTWWF_API_URL } from "../utilities/config";
 
-export function getTVSearchResults(title) {
+export function clearTVSearchResults() {
+  return { type: TV_SEARCH_RESULTS_CLEAR };
+}
+
+export function getTVSearchResults(title, page) {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/tvsearchresults");
+      const response = await axios.get(`${WTWWF_API_URL}/search/tv`, {
+        params: { title, page },
+      });
       dispatch(tvSearchResultsLoad(response.data));
     } catch (err) {
       console.log(err);

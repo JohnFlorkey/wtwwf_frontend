@@ -15,7 +15,7 @@ function SearchForm({ type }) {
     evt.preventDefault();
     // when submitting the search form we're always looking for page 1 of results
     const page = 1;
-    history.push(`/search/movies?title=${formData.title}&page=${page}`);
+    history.push(`/search/${type}?title=${formData.title}&page=${page}`);
   };
 
   return (

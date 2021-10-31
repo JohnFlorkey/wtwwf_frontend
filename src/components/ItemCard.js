@@ -38,7 +38,7 @@ function ItemCard({ item, inUserItemList }) {
       <Card sx={{ m: 1, width: 154 }}>
         <CardMedia
           component="img"
-          image={item.posterPath}
+          image={item.posterURL}
           alt="movie poster"
           sx={{ maxWidth: 154 }}
         />

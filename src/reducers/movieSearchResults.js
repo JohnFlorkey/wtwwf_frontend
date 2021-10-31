@@ -11,7 +11,9 @@ function movieSearchResults(state = INITIAL_STATE, action) {
       return INITIAL_STATE;
     }
     case MOVIE_SEARCH_RESULTS_LOAD: {
-      const { searchTerm, totalPages, totalResults } = action.payload;
+      const { searchTerm, total_pages, total_results } = action.payload;
+      const totalPages = total_pages;
+      const totalResults = total_results;
 
       return {
         ...state,

@@ -7,7 +7,7 @@ function SearchMovies() {
   return (
     <Box>
       <Typography variant="h4">Search</Typography>
-      <SearchForm type="movie" />
+      <SearchForm type="movies" />
       <SearchMoviesResultsList />
     </Box>
   );

@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import SearchForm from "./SearchForm";
 import SearchTVResultsList from "./SearchTVResultsList";
 
-function SearchMovies() {
+function SearchTV() {
   return (
     <Box>
       <Typography variant="h4">Search</Typography>
@@ -13,4 +13,4 @@ function SearchMovies() {
   );
 }
 
-export default SearchMovies;
+export default SearchTV;

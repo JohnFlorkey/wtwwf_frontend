@@ -6,7 +6,7 @@ export function getSearchResults(type, title, page) {
     if (type === "movie") {
       dispatch(getMovieSearchResults(title, page));
     } else if (type === "tv") {
-      dispatch(getTVSearchResults(title));
+      dispatch(getTVSearchResults(title, page));
     }
   };
 }
