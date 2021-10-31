@@ -1,12 +1,13 @@
 import axios from "axios";
 import { MOVIE_DISCOVER_RESULTS_LOAD } from "./types";
+import { WTWWF_API_URL } from "../utilities/config";
 
-export function getMovieDiscoverResults() {
+export function getMovieDiscoverResults(page) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(
-        "http://localhost:3001/moviediscoverresults"
-      );
+      const response = await axios.get(`${WTWWF_API_URL}/discover/movies`, {
+        params: { page },
+      });
       dispatch(movieDiscoverResultsLoad(response.data));
     } catch (err) {
       console.log(err);

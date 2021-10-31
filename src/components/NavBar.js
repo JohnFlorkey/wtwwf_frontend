@@ -53,11 +53,11 @@ function NavBar() {
   };
   const handleDiscoverMoviesClick = () => {
     handleDiscoverMenuClose();
-    history.push("/discover/movies");
+    history.push("/discover/movies?page=1");
   };
   const handleDiscoverTVClick = () => {
     handleDiscoverMenuClose();
-    history.push("/discover/tv");
+    history.push("/discover/tv?page=1");
   };
   const isDiscoverMenuOpen = Boolean(discoverAnchorEl);
 
