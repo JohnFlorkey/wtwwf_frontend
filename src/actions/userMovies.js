@@ -1,5 +1,6 @@
 import axios from "axios";
 import { USER_MOVIES_LOAD, USER_MOVIE_ADD, USER_MOVIE_REMOVE } from "./types";
+import { WTWWF_API_URL } from "../utilities/config";
 
 export function addUserMovie(movie) {
   return async function (dispatch) {
@@ -16,10 +17,8 @@ export function addUserMovie(movie) {
 export function getUserMovies() {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/movies");
-      const userMovies = {};
-      response.data.map((m) => (userMovies[m.id] = m));
-      dispatch(userMoviesLoad(userMovies));
+      const response = await axios.get(`${WTWWF_API_URL}/movies`);
+      dispatch(userMoviesLoad(response.data));
     } catch (err) {
       console.log(err);
       console.log("attempt to get movies failed");

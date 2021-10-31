@@ -15,11 +15,11 @@ function DiscoverTVResultsList() {
   const query = useQuery();
   const page = parseInt(query.get("page"));
 
-  // useEffect(() => {
-  //   if (Object.keys(userMovies).length === 0) {
-  //     dispatch(getUserMovies());
-  //   }
-  // }, [dispatch, userMovies]);
+  useEffect(() => {
+    if (Object.keys(userTV).length === 0) {
+      dispatch(getUserTV());
+    }
+  }, [dispatch, userTV]);
 
   useEffect(() => {
     if (!tvDiscoverResults[page]) {
@@ -44,7 +44,7 @@ function DiscoverTVResultsList() {
           )}
         />
       </Box>
-      <ItemList items={tvDiscoverResults[page]} />
+      <ItemList items={tvDiscoverResults[page]} userMediaList={userTV} />
     </Box>
   ) : null;
 }

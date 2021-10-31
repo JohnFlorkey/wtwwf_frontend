@@ -20,7 +20,7 @@ function UserMovieList() {
   return (
     <Box>
       <Typography variant="h4">My Movies</Typography>
-      <ItemList items={movies} />
+      <ItemList items={movies} userMediaList={userMovies} />
     </Box>
   );
 }

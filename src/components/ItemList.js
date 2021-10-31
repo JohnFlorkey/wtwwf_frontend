@@ -1,25 +1,11 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { Box } from "@mui/material";
-import { getUserMovies } from "../actions/userMovies";
 import ItemCard from "./ItemCard";
 
-function ItemList({ items }) {
-  const dispatch = useDispatch();
-  const { userMovies } = useSelector((store) => store);
-
-  useEffect(() => {
-    if (Object.keys(userMovies).length === 0) {
-      dispatch(getUserMovies());
-    }
-  }, [dispatch, userMovies]);
-
+function ItemList({ items, userMediaList }) {
   const itemCards = [];
   items.map((item) => {
-    let inUserItemList = false;
-    if (item.title) {
-      inUserItemList = Boolean(userMovies[item.id]);
-    }
+    const inUserItemList = Boolean(userMediaList[item.id]);
     return itemCards.push(
       <ItemCard key={item.id} item={item} inUserItemList={inUserItemList} />
     );

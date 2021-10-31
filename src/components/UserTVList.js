@@ -20,7 +20,7 @@ function UserTVList() {
   return (
     <Box>
       <Typography variant="h4">My TV</Typography>
-      <ItemList items={tv} />
+      <ItemList items={tv} userMediaList={userTV} />
     </Box>
   );
 }

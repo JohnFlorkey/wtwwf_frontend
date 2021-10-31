@@ -7,11 +7,12 @@ import {
   clearTVSearchResults,
   getTVSearchResults,
 } from "../actions/tvSearchResults";
+import { getUserTV } from "../actions/userTV";
 
 function SearchTVResultsList() {
   const dispatch = useDispatch();
 
-  const { tvSearchResults } = useSelector((store) => store);
+  const { tvSearchResults, userTV } = useSelector((store) => store);
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -26,6 +27,12 @@ function SearchTVResultsList() {
       if (!tvSearchResults[page]) dispatch(getTVSearchResults(title, page));
     }
   }, [dispatch, tvSearchResults, page, title]);
+
+  useEffect(() => {
+    if (Object.keys(userTV).length === 0) {
+      dispatch(getUserTV());
+    }
+  }, [dispatch, userTV]);
 
   return Object.keys(tvSearchResults).length > 0 && tvSearchResults[page] ? (
     <Box>
@@ -43,7 +50,7 @@ function SearchTVResultsList() {
           )}
         />
       </Box>
-      <ItemList items={tvSearchResults[page]} />
+      <ItemList items={tvSearchResults[page]} userMediaList={userTV} />
     </Box>
   ) : null;
 }

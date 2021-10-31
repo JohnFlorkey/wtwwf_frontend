@@ -1,5 +1,6 @@
 import axios from "axios";
 import { USER_TV_ADD, USER_TV_LOAD, USER_TV_REMOVE } from "./types";
+import { WTWWF_API_URL } from "../utilities/config";
 
 export function addUserTV(tv) {
   return async function (dispatch) {
@@ -16,11 +17,8 @@ export function addUserTV(tv) {
 export function getUserTV() {
   return async function (dispatch) {
     try {
-      const response = await axios.get("http://localhost:3001/tv");
-      console.log(response);
-      const userTV = {};
-      response.data.map((m) => (userTV[m.id] = m));
-      dispatch(userTVLoad(userTV));
+      const response = await axios.get(`${WTWWF_API_URL}/tv`);
+      dispatch(userTVLoad(response.data));
     } catch (err) {
       console.log(err);
       console.log("attempt to get user tv failed");

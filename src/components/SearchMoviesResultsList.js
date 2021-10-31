@@ -7,11 +7,12 @@ import {
   clearMovieSearchResults,
   getMovieSearchResults,
 } from "../actions/movieSearchResults";
+import { getUserMovies } from "../actions/userMovies";
 
 function SearchMoviesResultsList() {
   const dispatch = useDispatch();
 
-  const { movieSearchResults } = useSelector((store) => store);
+  const { movieSearchResults, userMovies } = useSelector((store) => store);
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -27,6 +28,12 @@ function SearchMoviesResultsList() {
         dispatch(getMovieSearchResults(title, page));
     }
   }, [dispatch, movieSearchResults, page, title]);
+
+  useEffect(() => {
+    if (Object.keys(userMovies).length === 0) {
+      dispatch(getUserMovies());
+    }
+  }, [dispatch, userMovies]);
 
   return Object.keys(movieSearchResults).length > 0 &&
     movieSearchResults[page] ? (
@@ -45,7 +52,7 @@ function SearchMoviesResultsList() {
           )}
         />
       </Box>
-      <ItemList items={movieSearchResults[page]} />
+      <ItemList items={movieSearchResults[page]} userMediaList={userMovies} />
     </Box>
   ) : null;
 }

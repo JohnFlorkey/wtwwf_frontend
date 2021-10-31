@@ -15,11 +15,11 @@ function DiscoverMovieResultsList() {
   const query = useQuery();
   const page = parseInt(query.get("page"));
 
-  // useEffect(() => {
-  //   if (Object.keys(userMovies).length === 0) {
-  //     dispatch(getUserMovies());
-  //   }
-  // }, [dispatch, userMovies]);
+  useEffect(() => {
+    if (Object.keys(userMovies).length === 0) {
+      dispatch(getUserMovies());
+    }
+  }, [dispatch, userMovies]);
 
   useEffect(() => {
     if (!movieDiscoverResults[page]) {
@@ -44,7 +44,7 @@ function DiscoverMovieResultsList() {
           )}
         />
       </Box>
-      <ItemList items={movieDiscoverResults[page]} />
+      <ItemList items={movieDiscoverResults[page]} userMediaList={userMovies} />
     </Box>
   ) : null;
 }

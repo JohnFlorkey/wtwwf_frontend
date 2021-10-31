@@ -3,9 +3,9 @@ import { addUserTV, removeUserTV } from "./userTV";
 
 export function addUserItem(item) {
   return async function (dispatch) {
-    if (item.title) {
+    if (item.type === "movies") {
       dispatch(addUserMovie(item));
-    } else if (item.name) {
+    } else if (item.type === "tv") {
       dispatch(addUserTV(item));
     }
   };
@@ -13,9 +13,9 @@ export function addUserItem(item) {
 
 export function removeUserItem(item) {
   return async function (dispatch) {
-    if (item.title) {
+    if (item.type === "movies") {
       dispatch(removeUserMovie(item.id));
-    } else if (item.name) {
+    } else if (item.type === "tv") {
       dispatch(removeUserTV(item.id));
     }
   };
