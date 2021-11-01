@@ -16,13 +16,23 @@ function FriendGroupCard({ friendGroup }) {
       <Box sx={{ display: "flex" }}>
         <Typography variant="h6">Movie Recommendations</Typography>
         {Object.values(friendGroup.movieRecommendations).map((r) => (
-          <ItemCard key={r.id} item={r} />
+          <ItemCard
+            key={r.id}
+            item={r}
+            friendGroupID={friendGroup.id}
+            isRecommendation
+          />
         ))}
       </Box>
       <Box sx={{ display: "flex" }}>
         <Typography variant="h6">TV Recommendations</Typography>
         {Object.values(friendGroup.tvRecommendations).map((r) => (
-          <ItemCard key={r.id} item={r} />
+          <ItemCard
+            key={r.id}
+            item={r}
+            friendGroupID={friendGroup.id}
+            isRecommendation
+          />
         ))}
       </Box>
     </Card>

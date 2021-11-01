@@ -12,8 +12,14 @@ import {
 import AdditionalDetail from "./AdditionalDetail";
 import { displayDate, displayRuntime } from "../utilities/helper";
 import { addUserItem, removeUserItem } from "../actions/userItem";
+import { removeFriendGroupMovieRecommendation } from "../actions/friendGroups";
 
-function ItemCard({ item, inUserItemList }) {
+function ItemCard({
+  item,
+  inUserItemList = false,
+  friendGroupID = "",
+  isRecommendation = false,
+}) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
@@ -22,6 +28,10 @@ function ItemCard({ item, inUserItemList }) {
 
   const removeItem = (itemID) => {
     dispatch(removeUserItem(itemID));
+  };
+
+  const watchedMovie = (friendGroupID, movieID) => {
+    dispatch(removeFriendGroupMovieRecommendation(friendGroupID, movieID));
   };
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -59,13 +69,22 @@ function ItemCard({ item, inUserItemList }) {
           <Button size="small" onClick={handlePopoverOpen}>
             More
           </Button>
-          {inUserItemList ? (
-            <Button size="small" onClick={() => removeItem(item)}>
-              Remove
-            </Button>
+          {!isRecommendation ? (
+            inUserItemList ? (
+              <Button size="small" onClick={() => removeItem(item)}>
+                Remove
+              </Button>
+            ) : (
+              <Button size="small" onClick={() => addItem(item)}>
+                Add
+              </Button>
+            )
           ) : (
-            <Button size="small" onClick={() => addItem(item)}>
-              Add
+            <Button
+              size="small"
+              onClick={() => watchedMovie(friendGroupID, item.id)}
+            >
+              We Watched It
             </Button>
           )}
         </CardActions>
