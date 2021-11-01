@@ -8,18 +8,18 @@ function FriendGroupList() {
   const { friendGroups } = useSelector((store) => store);
 
   useEffect(() => {
-    console.log("loading friend groups");
     if (friendGroups.length === 0) {
       dispatch(getFriendGroups());
     }
   }, [dispatch, friendGroups]);
-  return (
+
+  return Object.values(friendGroups).length > 0 ? (
     <Box>
-      {friendGroups.map((g) => (
-        <FriendGroupCard friendGroup={g} />
+      {Object.values(friendGroups).map((g) => (
+        <FriendGroupCard key={g.id} friendGroup={g} />
       ))}
     </Box>
-  );
+  ) : null;
 }
 
 export default FriendGroupList;

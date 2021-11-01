@@ -1,10 +1,10 @@
 import axios from "axios";
 import { FG_LOAD } from "./types";
+import { WTWWF_API_URL } from "../utilities/config";
 
 export function getFriendGroups() {
   return async function (dispatch) {
-    const response = await axios.get("http://localhost:3001/friendgroups");
-    console.log(response);
+    const response = await axios.get(`${WTWWF_API_URL}/friendgroups`);
     dispatch(loadFriendGroups(response.data));
   };
 }
