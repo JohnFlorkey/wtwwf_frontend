@@ -31,7 +31,7 @@ function Routes() {
       <Route path="/search/tv">
         <SearchTV />
       </Route>
-      <Route path="/user/profile">
+      <Route path="/profile">
         <UserProfileForm />
       </Route>
       <Route path="/friendGroups">

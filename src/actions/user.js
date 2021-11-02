@@ -1,9 +1,10 @@
-import { USER_LOAD, USER_UPDATE } from "./types";
 import axios from "axios";
+import { USER_LOAD, USER_UPDATE } from "./types";
+import { WTWWF_API_URL } from "../utilities/config";
 
 export function getUser(id) {
   return async function (dispatch) {
-    const response = await axios.get("http://localhost:3001/user?id=1");
+    const response = await axios.get(`${WTWWF_API_URL}/users/${id}`);
     dispatch(loadUser(response.data));
   };
 }
