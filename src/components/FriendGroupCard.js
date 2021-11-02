@@ -1,15 +1,12 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Button,
   Card,
   CardActions,
   CardContent,
-  IconButton,
-  Tooltip,
   Typography,
 } from "@mui/material";
-import TvIcon from "@mui/icons-material/Tv";
-import MovieIcon from "@mui/icons-material/Movie";
 import FriendGroupMember from "./FriendGroupMember";
 
 function FriendGroupCard({ friendGroup }) {
@@ -24,39 +21,14 @@ function FriendGroupCard({ friendGroup }) {
       </CardContent>
       <CardActions>
         <Typography variant="body2">See Recommendations</Typography>
-        <Tooltip title="TV">
-          <IconButton>
-            <TvIcon />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Movies">
-          <IconButton>
-            <MovieIcon />
-          </IconButton>
-        </Tooltip>
+        <Button
+          component={RouterLink}
+          to={`/friendGroups/${friendGroup.id}/movies`}
+        >
+          Movies
+        </Button>
+        <Button>TV</Button>
       </CardActions>
-      {/* <Box sx={{ display: "flex" }}>
-        <Typography variant="h6">Movie Recommendations</Typography>
-        {Object.values(friendGroup.movieRecommendations).map((r) => (
-          <ItemCard
-            key={r.id}
-            item={r}
-            friendGroupID={friendGroup.id}
-            isRecommendation
-          />
-        ))}
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Typography variant="h6">TV Recommendations</Typography>
-        {Object.values(friendGroup.tvRecommendations).map((r) => (
-          <ItemCard
-            key={r.id}
-            item={r}
-            friendGroupID={friendGroup.id}
-            isRecommendation
-          />
-        ))}
-      </Box> */}
     </Card>
   );
 }

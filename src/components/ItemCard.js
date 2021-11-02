@@ -14,12 +14,7 @@ import { displayDate, displayRuntime } from "../utilities/helper";
 import { addUserItem, removeUserItem } from "../actions/userItem";
 import { removeFriendGroupMovieRecommendation } from "../actions/friendGroups";
 
-function ItemCard({
-  item,
-  inUserItemList = false,
-  friendGroupID = "",
-  isRecommendation = false,
-}) {
+function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
   const dispatch = useDispatch();
 
   const addItem = (item) => {
@@ -69,7 +64,7 @@ function ItemCard({
           <Button size="small" onClick={handlePopoverOpen}>
             More
           </Button>
-          {!isRecommendation ? (
+          {!friendGroupID ? (
             inUserItemList ? (
               <Button size="small" onClick={() => removeItem(item)}>
                 Remove

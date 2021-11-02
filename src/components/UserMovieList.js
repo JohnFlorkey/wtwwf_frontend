@@ -14,8 +14,7 @@ function UserMovieList() {
     }
   }, [dispatch, userMovies]);
 
-  const movies = [];
-  Object.values(userMovies).map((m) => movies.push(m));
+  const movies = Object.values(userMovies);
 
   return (
     <Box>

@@ -9,6 +9,7 @@ import DiscoverTVResultsList from "./DiscoverTVResultsList";
 import UserProfileForm from "./UserProfileForm";
 import FriendGroupList from "./FriendGroupList";
 import Home from "./Home";
+import FriendGroupMoviesList from "./FriendGroupMoviesList";
 
 function Routes() {
   return (
@@ -33,6 +34,9 @@ function Routes() {
       </Route>
       <Route path="/profile">
         <UserProfileForm />
+      </Route>
+      <Route path="/friendGroups/:friendGroupID/movies">
+        <FriendGroupMoviesList />
       </Route>
       <Route path="/friendGroups">
         <FriendGroupList />
