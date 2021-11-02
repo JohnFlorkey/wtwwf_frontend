@@ -1,19 +1,41 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
-import ItemCard from "./ItemCard";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  IconButton,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import TvIcon from "@mui/icons-material/Tv";
+import MovieIcon from "@mui/icons-material/Movie";
+import FriendGroupMember from "./FriendGroupMember";
 
 function FriendGroupCard({ friendGroup }) {
   return (
-    <Card>
+    <Card sx={{ m: 1 }}>
       <CardContent>
         <Typography variant="h4">{friendGroup.name}</Typography>
         {friendGroup.members.map((m) => (
-          <Typography key={m.id} variant="body1">
-            {m.username}
-          </Typography>
+          <FriendGroupMember key={m.id} member={m} />
         ))}
+        <Button>Invite</Button>
       </CardContent>
-      <Box sx={{ display: "flex" }}>
+      <CardActions>
+        <Typography variant="body2">See Recommendations</Typography>
+        <Tooltip title="TV">
+          <IconButton>
+            <TvIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Movies">
+          <IconButton>
+            <MovieIcon />
+          </IconButton>
+        </Tooltip>
+      </CardActions>
+      {/* <Box sx={{ display: "flex" }}>
         <Typography variant="h6">Movie Recommendations</Typography>
         {Object.values(friendGroup.movieRecommendations).map((r) => (
           <ItemCard
@@ -34,7 +56,7 @@ function FriendGroupCard({ friendGroup }) {
             isRecommendation
           />
         ))}
-      </Box>
+      </Box> */}
     </Card>
   );
 }
