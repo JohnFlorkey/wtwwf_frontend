@@ -10,6 +10,7 @@ import UserProfileForm from "./UserProfileForm";
 import FriendGroupList from "./FriendGroupList";
 import Home from "./Home";
 import FriendGroupMoviesList from "./FriendGroupMoviesList";
+import FriendGroupTVList from "./FriendGroupTVList";
 
 function Routes() {
   return (
@@ -37,6 +38,9 @@ function Routes() {
       </Route>
       <Route path="/friendGroups/:friendGroupID/movies">
         <FriendGroupMoviesList />
+      </Route>
+      <Route path="/friendGroups/:friendGroupID/tv">
+        <FriendGroupTVList />
       </Route>
       <Route path="/friendGroups">
         <FriendGroupList />

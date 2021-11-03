@@ -1,5 +1,8 @@
 import axios from "axios";
-import { FG_MEDIA_RECOMMENDATION_LOAD } from "./types";
+import {
+  FG_MEDIA_RECOMMENDATION_LOAD,
+  FG_MEDIA_RECOMMENDATION_REMOVE,
+} from "./types";
 import { WTWWF_API_URL } from "../utilities/config";
 
 export function getFriendGroupMediaRecommendations(friendGroupID, mediaType) {
@@ -11,6 +14,35 @@ export function getFriendGroupMediaRecommendations(friendGroupID, mediaType) {
   };
 }
 
+export function removeFriendGroupMediaRecommendation(
+  friendGroupID,
+  mediaType,
+  mediaID
+) {
+  return async function (dispatch) {
+    // update database
+    //update state
+    dispatch(
+      removeFriendGroupMediaRecommendationState(
+        friendGroupID,
+        mediaType,
+        mediaID
+      )
+    );
+  };
+}
+
 function loadFriendGroupMediaRecommendations(recommendations) {
   return { type: FG_MEDIA_RECOMMENDATION_LOAD, payload: recommendations };
+}
+
+function removeFriendGroupMediaRecommendationState(
+  friendGroupID,
+  mediaType,
+  mediaID
+) {
+  return {
+    type: FG_MEDIA_RECOMMENDATION_REMOVE,
+    payload: { friendGroupID, mediaType, mediaID },
+  };
 }

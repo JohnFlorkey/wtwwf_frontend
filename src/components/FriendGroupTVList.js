@@ -5,13 +5,13 @@ import { Box, Typography } from "@mui/material";
 import { getFriendGroupMediaRecommendations } from "../actions/friendGroupMediaRecommendations";
 import ItemList from "./ItemList";
 
-function FriendGroupMoviesList() {
+function FriendGroupTVList() {
   const { friendGroupMediaRecommendations } = useSelector((store) => store);
   const dispatch = useDispatch();
   const { friendGroupID } = useParams();
 
   useEffect(() => {
-    dispatch(getFriendGroupMediaRecommendations(friendGroupID, "movies"));
+    dispatch(getFriendGroupMediaRecommendations(friendGroupID, "tv"));
   }, [friendGroupID, dispatch]);
 
   const mediaItems = friendGroupMediaRecommendations.recommendations
@@ -21,7 +21,7 @@ function FriendGroupMoviesList() {
   return (
     <Box>
       <Typography variant="h3">
-        {friendGroupMediaRecommendations.name} Movies
+        {friendGroupMediaRecommendations.name} TV
       </Typography>
       <ItemList
         items={mediaItems}
@@ -32,4 +32,4 @@ function FriendGroupMoviesList() {
   );
 }
 
-export default FriendGroupMoviesList;
+export default FriendGroupTVList;

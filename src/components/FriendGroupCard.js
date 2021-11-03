@@ -27,7 +27,12 @@ function FriendGroupCard({ friendGroup }) {
         >
           Movies
         </Button>
-        <Button>TV</Button>
+        <Button
+          component={RouterLink}
+          to={`/friendGroups/${friendGroup.id}/tv`}
+        >
+          TV
+        </Button>
       </CardActions>
     </Card>
   );

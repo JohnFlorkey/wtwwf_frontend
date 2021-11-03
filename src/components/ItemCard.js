@@ -12,7 +12,7 @@ import {
 import AdditionalDetail from "./AdditionalDetail";
 import { displayDate, displayRuntime } from "../utilities/helper";
 import { addUserItem, removeUserItem } from "../actions/userItem";
-import { removeFriendGroupMovieRecommendation } from "../actions/friendGroups";
+import { removeFriendGroupMediaRecommendation } from "../actions/friendGroupMediaRecommendations";
 
 function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
   const dispatch = useDispatch();
@@ -25,8 +25,10 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
     dispatch(removeUserItem(itemID));
   };
 
-  const watchedMovie = (friendGroupID, movieID) => {
-    dispatch(removeFriendGroupMovieRecommendation(friendGroupID, movieID));
+  const watchedMovie = (friendGroupID, mediaType, movieID) => {
+    dispatch(
+      removeFriendGroupMediaRecommendation(friendGroupID, mediaType, movieID)
+    );
   };
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -77,7 +79,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
           ) : (
             <Button
               size="small"
-              onClick={() => watchedMovie(friendGroupID, item.id)}
+              onClick={() => watchedMovie(friendGroupID, item.type, item.id)}
             >
               We Watched It
             </Button>
