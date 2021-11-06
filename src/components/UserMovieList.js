@@ -6,13 +6,14 @@ import ItemList from "./ItemList";
 
 function UserMovieList() {
   const dispatch = useDispatch();
-  const { userMovies } = useSelector((store) => store);
+  const { user, userMovies } = useSelector((store) => store);
+  console.log(user);
 
   useEffect(() => {
-    if (Object.keys(userMovies).length === 0) {
-      dispatch(getUserMovies());
+    if (user.id && Object.keys(userMovies).length === 0) {
+      dispatch(getUserMovies(user.id));
     }
-  }, [dispatch, userMovies]);
+  }, [dispatch, user, userMovies]);
 
   const movies = Object.values(userMovies);
 

@@ -6,13 +6,13 @@ import ItemList from "./ItemList";
 
 function UserTVList() {
   const dispatch = useDispatch();
-  const { userTV } = useSelector((store) => store);
+  const { user, userTV } = useSelector((store) => store);
 
   useEffect(() => {
-    if (Object.keys(userTV).length === 0) {
-      dispatch(getUserTV());
+    if (user.id && Object.keys(userTV).length === 0) {
+      dispatch(getUserTV(user.id));
     }
-  }, [dispatch, userTV]);
+  }, [dispatch, user, userTV]);
 
   const tv = [];
   Object.values(userTV).map((m) => tv.push(m));

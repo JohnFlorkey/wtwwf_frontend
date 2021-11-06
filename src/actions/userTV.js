@@ -14,10 +14,10 @@ export function addUserTV(tv) {
   };
 }
 
-export function getUserTV() {
+export function getUserTV(userID) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${WTWWF_API_URL}/tv`);
+      const response = await axios.get(`${WTWWF_API_URL}/users/${userID}/tv`);
       dispatch(userTVLoad(response.data));
     } catch (err) {
       console.log(err);

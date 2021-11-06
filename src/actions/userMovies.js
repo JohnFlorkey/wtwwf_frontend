@@ -14,10 +14,12 @@ export function addUserMovie(movie) {
   };
 }
 
-export function getUserMovies() {
+export function getUserMovies(userID) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${WTWWF_API_URL}/movies`);
+      const response = await axios.get(
+        `${WTWWF_API_URL}/users/${userID}/movies`
+      );
       dispatch(userMoviesLoad(response.data));
     } catch (err) {
       console.log(err);
