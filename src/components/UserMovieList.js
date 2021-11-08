@@ -7,7 +7,6 @@ import ItemList from "./ItemList";
 function UserMovieList() {
   const dispatch = useDispatch();
   const { user, userMovies } = useSelector((store) => store);
-  console.log(user);
 
   useEffect(() => {
     if (user.id && Object.keys(userMovies).length === 0) {

@@ -8,7 +8,10 @@ import { getMovieDiscoverResults } from "../actions/movieDiscoverResults";
 
 function DiscoverMovieResultsList() {
   const dispatch = useDispatch();
-  const { movieDiscoverResults, userMovies } = useSelector((store) => store);
+  const { movieDiscoverResults, user, userMovies } = useSelector(
+    (store) => store
+  );
+
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -17,9 +20,9 @@ function DiscoverMovieResultsList() {
 
   useEffect(() => {
     if (Object.keys(userMovies).length === 0) {
-      dispatch(getUserMovies());
+      dispatch(getUserMovies(user.id));
     }
-  }, [dispatch, userMovies]);
+  }, [dispatch, user, userMovies]);
 
   useEffect(() => {
     if (!movieDiscoverResults[page]) {
