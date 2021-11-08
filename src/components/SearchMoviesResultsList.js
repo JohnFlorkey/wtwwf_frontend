@@ -12,7 +12,9 @@ import { getUserMovies } from "../actions/userMovies";
 function SearchMoviesResultsList() {
   const dispatch = useDispatch();
 
-  const { movieSearchResults, userMovies } = useSelector((store) => store);
+  const { movieSearchResults, user, userMovies } = useSelector(
+    (store) => store
+  );
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -31,9 +33,9 @@ function SearchMoviesResultsList() {
 
   useEffect(() => {
     if (Object.keys(userMovies).length === 0) {
-      dispatch(getUserMovies());
+      dispatch(getUserMovies(user.id));
     }
-  }, [dispatch, userMovies]);
+  }, [dispatch, user, userMovies]);
 
   return Object.keys(movieSearchResults).length > 0 &&
     movieSearchResults[page] ? (

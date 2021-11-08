@@ -12,7 +12,7 @@ import { getUserTV } from "../actions/userTV";
 function SearchTVResultsList() {
   const dispatch = useDispatch();
 
-  const { tvSearchResults, userTV } = useSelector((store) => store);
+  const { tvSearchResults, user, userTV } = useSelector((store) => store);
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -30,9 +30,9 @@ function SearchTVResultsList() {
 
   useEffect(() => {
     if (Object.keys(userTV).length === 0) {
-      dispatch(getUserTV());
+      dispatch(getUserTV(user.id));
     }
-  }, [dispatch, userTV]);
+  }, [dispatch, user, userTV]);
 
   return Object.keys(tvSearchResults).length > 0 && tvSearchResults[page] ? (
     <Box>
