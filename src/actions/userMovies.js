@@ -2,10 +2,16 @@ import axios from "axios";
 import { USER_MOVIES_LOAD, USER_MOVIE_ADD, USER_MOVIE_REMOVE } from "./types";
 import { WTWWF_API_URL } from "../utilities/config";
 
-export function addUserMovie(movie) {
+export function addUserMovie(movieID, userID) {
   return async function (dispatch) {
     try {
       // update the database
+      const response = await axios.post(
+        `${WTWWF_API_URL}/users/${userID}/movies/`,
+        { movieID }
+      );
+      const movie = response.data;
+
       // then update state
       dispatch(userMovieAdd(movie));
     } catch (err) {

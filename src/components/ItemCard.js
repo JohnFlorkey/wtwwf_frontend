@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
   Card,
@@ -16,9 +16,10 @@ import { removeFriendGroupMediaRecommendation } from "../actions/friendGroupMedi
 
 function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
   const dispatch = useDispatch();
+  const { user } = useSelector((store) => store);
 
-  const addItem = (item) => {
-    dispatch(addUserItem(item));
+  const addItem = (item, userID) => {
+    dispatch(addUserItem(item, userID));
   };
 
   const removeItem = (itemID) => {
@@ -72,7 +73,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
                 Remove
               </Button>
             ) : (
-              <Button size="small" onClick={() => addItem(item)}>
+              <Button size="small" onClick={() => addItem(item, user.id)}>
                 Add
               </Button>
             )

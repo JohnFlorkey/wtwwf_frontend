@@ -2,10 +2,15 @@ import axios from "axios";
 import { USER_TV_ADD, USER_TV_LOAD, USER_TV_REMOVE } from "./types";
 import { WTWWF_API_URL } from "../utilities/config";
 
-export function addUserTV(tv) {
+export function addUserTV(tvID, userID) {
   return async function (dispatch) {
     try {
       // update the database
+      const response = await axios.post(
+        `${WTWWF_API_URL}/users/${userID}/tv/`,
+        { tvID }
+      );
+      const tv = response.data;
       // then update state
       dispatch(userTVAdd(tv));
     } catch (err) {

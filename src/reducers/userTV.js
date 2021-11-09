@@ -5,7 +5,6 @@ const INITIAL_STATE = {};
 function userTV(state = INITIAL_STATE, action) {
   switch (action.type) {
     case USER_TV_ADD: {
-      console.log(action);
       return { ...state, [action.payload.id]: action.payload };
     }
     case USER_TV_REMOVE: {
