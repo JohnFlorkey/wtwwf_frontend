@@ -6,17 +6,17 @@ import { Box } from "@mui/material";
 
 function FriendGroupList() {
   const dispatch = useDispatch();
-  const { friendGroups } = useSelector((store) => store);
+  const { friendGroups, user } = useSelector((store) => store);
 
   useEffect(() => {
     if (friendGroups.length === 0) {
-      dispatch(getFriendGroups());
+      dispatch(getFriendGroups(user.id));
     }
-  }, [dispatch, friendGroups]);
+  }, [dispatch, friendGroups, user]);
 
-  return Object.values(friendGroups).length > 0 ? (
+  return friendGroups.length > 0 ? (
     <Box>
-      {Object.values(friendGroups).map((g) => (
+      {friendGroups.map((g) => (
         <FriendGroupCard key={g.id} friendGroup={g} />
       ))}
     </Box>

@@ -34,13 +34,15 @@ export function getUserMovies(userID) {
   };
 }
 
-export function removeUserMovie(movieID) {
+export function removeUserMovie(movieID, userID) {
   return async function (dispatch) {
     try {
       // update the database
+      const response = await axios.delete(
+        `${WTWWF_API_URL}/users/${userID}/movies/${movieID}`
+      );
       // then update state
-      console.log("implement remove movie from user's list");
-      dispatch(userMovieRemove(movieID));
+      dispatch(userMovieRemove(response.data));
     } catch (err) {
       console.log(err, "attempt to remove user movie from db failed.");
     }

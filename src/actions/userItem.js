@@ -11,12 +11,12 @@ export function addUserItem(item, userID) {
   };
 }
 
-export function removeUserItem(item) {
+export function removeUserItem(item, userID) {
   return async function (dispatch) {
     if (item.type === "movies") {
-      dispatch(removeUserMovie(item.id));
+      dispatch(removeUserMovie(item.id, userID));
     } else if (item.type === "tv") {
-      dispatch(removeUserTV(item.id));
+      dispatch(removeUserTV(item.id, userID));
     }
   };
 }

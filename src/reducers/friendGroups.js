@@ -4,7 +4,7 @@ const INITIAL_STATE = [];
 function friendGroups(state = INITIAL_STATE, action) {
   switch (action.type) {
     case FG_LOAD: {
-      return { ...action.payload };
+      return [...action.payload];
     }
     default:
       return state;

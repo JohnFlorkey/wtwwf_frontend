@@ -22,8 +22,8 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
     dispatch(addUserItem(item, userID));
   };
 
-  const removeItem = (itemID) => {
-    dispatch(removeUserItem(itemID));
+  const removeItem = (item, userID) => {
+    dispatch(removeUserItem(item, userID));
   };
 
   const watchedMovie = (friendGroupID, mediaType, movieID) => {
@@ -69,7 +69,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
           </Button>
           {!friendGroupID ? (
             inUserItemList ? (
-              <Button size="small" onClick={() => removeItem(item)}>
+              <Button size="small" onClick={() => removeItem(item, user.id)}>
                 Remove
               </Button>
             ) : (
