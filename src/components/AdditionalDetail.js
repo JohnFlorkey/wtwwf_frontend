@@ -18,7 +18,7 @@ function AdditionalDetail({ item }) {
           <Typography variant="body2">Genres:</Typography>
         </Box>
         <Box sx={{ gridRow: 1, gridColumn: "2/6" }}>
-          <Typography variant="body2">{item.genres}</Typography>
+          <Typography variant="body2">{item.genres.join(", ")}</Typography>
         </Box>
         <Box sx={{ gridRow: 2, gridColumn: "1/2" }}>
           <Typography variant="body2">Overview:</Typography>
