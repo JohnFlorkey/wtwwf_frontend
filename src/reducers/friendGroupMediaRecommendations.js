@@ -8,18 +8,18 @@ const INITIAL_STATE = {};
 function friendGroupMediaRecommendations(state = INITIAL_STATE, action) {
   switch (action.type) {
     case FG_MEDIA_RECOMMENDATION_LOAD: {
-      return { ...action.payload };
+      const newState = { ...action.payload };
+      newState.recommendations = {};
+      action.payload.recommendations.map(
+        (r) => (newState.recommendations[r.id] = r)
+      );
+
+      return newState;
     }
     case FG_MEDIA_RECOMMENDATION_REMOVE: {
-      const { friendGroupID, mediaType, mediaID } = action.payload;
-      if (state.id == friendGroupID && state.type == mediaType) {
-        const newState = { ...state };
-        delete newState.recommendations[mediaID];
-        return newState;
-      } else {
-        console.log("in the wrong spot");
-        return state;
-      }
+      const newState = { ...state };
+      delete newState.recommendations[action.payload.mediaID];
+      return newState;
     }
     default:
       return state;

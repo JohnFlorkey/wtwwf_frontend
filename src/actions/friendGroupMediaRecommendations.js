@@ -21,14 +21,23 @@ export function removeFriendGroupMediaRecommendation(
 ) {
   return async function (dispatch) {
     // update database
-    //update state
-    dispatch(
-      removeFriendGroupMediaRecommendationState(
-        friendGroupID,
-        mediaType,
-        mediaID
-      )
+    const response = await axios.post(
+      `${WTWWF_API_URL}/friendGroups/${friendGroupID}/${mediaType}`,
+      {
+        id: mediaID,
+      }
     );
+    if (response.data) {
+      // update friend group recommendation state
+      // update user media state
+      dispatch(
+        removeFriendGroupMediaRecommendationState(
+          friendGroupID,
+          mediaType,
+          mediaID
+        )
+      );
+    }
   };
 }
 
