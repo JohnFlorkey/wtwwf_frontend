@@ -9,6 +9,13 @@ const INITIAL_STATE = {};
 
 function userTV(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case FG_MEDIA_RECOMMENDATION_REMOVE: {
+      const newState = { ...state };
+      if (action.payload.mediaType === "tv")
+        delete newState[action.payload.mediaID];
+
+      return newState;
+    }
     case USER_TV_ADD: {
       return { ...state, [action.payload.id]: action.payload };
     }
@@ -19,13 +26,6 @@ function userTV(state = INITIAL_STATE, action) {
     }
     case USER_TV_LOAD: {
       return action.payload;
-    }
-    case FG_MEDIA_RECOMMENDATION_REMOVE: {
-      const newState = { ...state };
-      if (action.payload.mediaType === "tv")
-        delete newState[action.payload.mediaID];
-
-      return newState;
     }
     default:
       return state;
