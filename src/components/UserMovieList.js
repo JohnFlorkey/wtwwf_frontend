@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserMovies } from "../actions/userMovies";
 import { Box, Typography } from "@mui/material";
-import ItemList from "./ItemList";
+// import ItemList from "./ItemList";
+import ItemFilter from "./ItemFilter";
 
 function UserMovieList() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function UserMovieList() {
   return (
     <Box>
       <Typography variant="h4">My Movies</Typography>
-      <ItemList items={movies} userMediaList={userMovies} />
+      <ItemFilter items={movies} userMediaList={userMovies} />
     </Box>
   );
 }

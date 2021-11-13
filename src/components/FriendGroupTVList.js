@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { getFriendGroupMediaRecommendations } from "../actions/friendGroupMediaRecommendations";
-import ItemList from "./ItemList";
+import ItemFilter from "./ItemFilter";
 
 function FriendGroupTVList() {
   const { friendGroupMediaRecommendations } = useSelector((store) => store);
@@ -23,7 +23,7 @@ function FriendGroupTVList() {
       <Typography variant="h3">
         {friendGroupMediaRecommendations.name} TV
       </Typography>
-      <ItemList
+      <ItemFilter
         items={mediaItems}
         userMediaList={{}}
         friendGroupID={friendGroupID}

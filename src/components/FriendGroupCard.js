@@ -22,12 +22,14 @@ function FriendGroupCard({ friendGroup }) {
       <CardActions>
         <Typography variant="body2">See Recommendations</Typography>
         <Button
+          key="movies"
           component={RouterLink}
           to={`/friendGroups/${friendGroup.id}/movies`}
         >
           Movies
         </Button>
         <Button
+          key="tv"
           component={RouterLink}
           to={`/friendGroups/${friendGroup.id}/tv`}
         >
