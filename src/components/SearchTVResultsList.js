@@ -51,6 +51,19 @@ function SearchTVResultsList() {
         />
       </Box>
       <ItemList items={tvSearchResults[page]} userMediaList={userTV} />
+      <Box>
+        <Pagination
+          count={tvSearchResults.totalPages}
+          page={page}
+          renderItem={(item) => (
+            <PaginationItem
+              component={RouterLink}
+              to={`/search/tv?title=${tvSearchResults.searchTerm}&page=${item.page}`}
+              {...item}
+            />
+          )}
+        />
+      </Box>
     </Box>
   ) : null;
 }

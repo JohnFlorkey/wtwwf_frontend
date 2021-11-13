@@ -88,7 +88,7 @@ function NavBar() {
             to="/"
             sx={{ color: "white", flexGrow: 1 }}
           >
-            WWTF
+            WTWWF
           </Typography>
           <Button
             component={RouterLink}

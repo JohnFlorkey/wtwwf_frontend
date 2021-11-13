@@ -45,6 +45,19 @@ function DiscoverTVResultsList() {
         />
       </Box>
       <ItemList items={tvDiscoverResults[page]} userMediaList={userTV} />
+      <Box>
+        <Pagination
+          count={tvDiscoverResults.totalPages}
+          page={page}
+          renderItem={(item) => (
+            <PaginationItem
+              component={RouterLink}
+              to={`/discover/tv?page=${item.page}`}
+              {...item}
+            />
+          )}
+        />
+      </Box>
     </Box>
   ) : null;
 }

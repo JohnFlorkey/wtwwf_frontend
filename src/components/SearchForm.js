@@ -19,7 +19,7 @@ function SearchForm({ type }) {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <TextField
         id="serarch-title"
         label="title"
@@ -28,7 +28,7 @@ function SearchForm({ type }) {
         variant="outlined"
         onChange={setFormData}
       />
-      <Button variant="contained" onClick={handleSubmit}>
+      <Button variant="contained" type="submit">
         Submit
       </Button>
     </form>

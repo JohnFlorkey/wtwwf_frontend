@@ -55,6 +55,19 @@ function SearchMoviesResultsList() {
         />
       </Box>
       <ItemList items={movieSearchResults[page]} userMediaList={userMovies} />
+      <Box>
+        <Pagination
+          count={movieSearchResults.totalPages}
+          page={page}
+          renderItem={(item) => (
+            <PaginationItem
+              component={RouterLink}
+              to={`/search/movies?title=${movieSearchResults.searchTerm}&page=${item.page}`}
+              {...item}
+            />
+          )}
+        />
+      </Box>
     </Box>
   ) : null;
 }
