@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import WatchProviders from "./WatchProviders";
 
 function AdditionalDetail({ item }) {
   return (
@@ -30,6 +31,16 @@ function AdditionalDetail({ item }) {
         <Box sx={{ gridRow: 2, gridColumn: "2/6" }}>
           <Typography variant="body2">{item.overview}</Typography>
         </Box>
+        {Object.keys(item.watchProviders).length > 0 ? (
+          <Box sx={{ gridRow: 3, gridColumn: "1/2" }}>
+            <Typography variant="body2">Where To Watch:</Typography>
+          </Box>
+        ) : null}
+        {Object.keys(item.watchProviders).length > 0 ? (
+          <Box sx={{ gridRow: 3, gridColumn: "2/6" }}>
+            <WatchProviders watchProviders={item.watchProviders} />
+          </Box>
+        ) : null}
       </Box>
     </div>
   );
