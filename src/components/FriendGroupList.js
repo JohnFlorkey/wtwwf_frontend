@@ -1,10 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFriendGroups } from "../actions/friendGroups";
 import FriendGroupCard from "./FriendGroupCard";
-import { Box } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import FriendGroupForm from "./FriendGroupForm";
 
 function FriendGroupList() {
+  const [showForm, setShowForm] = useState(false);
+  const toggleForm = () => {
+    setShowForm(() => {
+      return showForm ? false : true;
+    });
+  };
+
   const dispatch = useDispatch();
   const { friendGroups, user } = useSelector((store) => store);
 
@@ -16,6 +24,9 @@ function FriendGroupList() {
 
   return Object.keys(friendGroups).length > 0 ? (
     <Box>
+      <Typography variant="h3">My Friend Groups</Typography>
+      {!showForm ? <Button onClick={toggleForm}>+ Friend Group</Button> : null}
+      {showForm ? <FriendGroupForm toggleForm={toggleForm} /> : null}
       {Object.values(friendGroups).map((g) => (
         <FriendGroupCard key={g.id} friendGroup={g} />
       ))}
