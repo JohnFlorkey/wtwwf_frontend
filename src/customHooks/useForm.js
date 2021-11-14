@@ -6,7 +6,11 @@ function useForm(initialState = {}) {
   const addFormData = (name, value) => {
     setFormData({ ...formData, [name]: value });
   };
-  return [formData, addFormData];
+
+  const clearFormData = (initialState) => {
+    setFormData(initialState);
+  };
+  return [formData, addFormData, clearFormData];
 }
 
 export default useForm;

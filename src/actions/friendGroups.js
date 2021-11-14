@@ -12,6 +12,18 @@ export function createFriendGroup(name, userID) {
   };
 }
 
+export async function createInvitation(email, friendGroupID, invitingUserID) {
+  const response = await axios.post(
+    `${WTWWF_API_URL}/friendGroups/${friendGroupID}/invitations`,
+    {
+      email,
+      invitingUserID,
+    }
+  );
+
+  return response.data;
+}
+
 export function getFriendGroups(userID) {
   return async function (dispatch) {
     const response = await axios.get(
