@@ -1,10 +1,23 @@
-import { FG_LOAD } from "../actions/types";
+import { FG_LOAD, FG_MEMBER_REMOVE } from "../actions/types";
 
-const INITIAL_STATE = [];
+const INITIAL_STATE = {};
 function friendGroups(state = INITIAL_STATE, action) {
   switch (action.type) {
     case FG_LOAD: {
-      return [...action.payload];
+      const newState = {};
+      action.payload.map((f) => {
+        newState[f.id] = Object.assign({}, f);
+        delete newState[f.id].members;
+        newState[f.id].members = {};
+        f.members.map((m) => (newState[f.id].members[m.userID] = m));
+      });
+      return newState;
+    }
+    case FG_MEMBER_REMOVE: {
+      const { friendGroupID, userID } = action.payload;
+      const newState = { ...state };
+      delete newState[friendGroupID].members[userID];
+      return newState;
     }
     default:
       return state;

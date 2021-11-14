@@ -9,14 +9,14 @@ function FriendGroupList() {
   const { friendGroups, user } = useSelector((store) => store);
 
   useEffect(() => {
-    if (friendGroups.length === 0) {
+    if (Object.keys(friendGroups).length === 0) {
       dispatch(getFriendGroups(user.id));
     }
   }, [dispatch, friendGroups, user]);
 
-  return friendGroups.length > 0 ? (
+  return Object.keys(friendGroups).length > 0 ? (
     <Box>
-      {friendGroups.map((g) => (
+      {Object.values(friendGroups).map((g) => (
         <FriendGroupCard key={g.id} friendGroup={g} />
       ))}
     </Box>

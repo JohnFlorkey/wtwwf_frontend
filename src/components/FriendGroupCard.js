@@ -14,8 +14,12 @@ function FriendGroupCard({ friendGroup }) {
     <Card sx={{ m: 1 }}>
       <CardContent>
         <Typography variant="h4">{friendGroup.name}</Typography>
-        {friendGroup.members.map((m) => (
-          <FriendGroupMember key={m.userID} member={m} />
+        {Object.values(friendGroup.members).map((m) => (
+          <FriendGroupMember
+            key={m.userID}
+            member={m}
+            friendGroupID={friendGroup.id}
+          />
         ))}
         <Button>Invite</Button>
       </CardContent>
