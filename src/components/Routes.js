@@ -11,6 +11,7 @@ import FriendGroupList from "./FriendGroupList";
 import Home from "./Home";
 import FriendGroupMoviesList from "./FriendGroupMoviesList";
 import FriendGroupTVList from "./FriendGroupTVList";
+import Invitation from "./Invitation";
 
 function Routes() {
   return (
@@ -20,6 +21,9 @@ function Routes() {
       </Route>
       <Route path="/discover/tv">
         <DiscoverTVResultsList type="tv" />
+      </Route>
+      <Route path="/invitation">
+        <Invitation />
       </Route>
       <Route path="/movies">
         <UserMovieList />
