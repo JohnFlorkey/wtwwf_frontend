@@ -1,8 +1,9 @@
+import axios from "axios";
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import { createInvitation } from "../actions/friendGroups";
 import useForm from "../customHooks/useForm";
+import { WTWWF_API_URL } from "../utilities/config";
 
 function FriendGroupInvitationForm({
   friendGroupID,
@@ -20,12 +21,12 @@ function FriendGroupInvitationForm({
 
   const handleInvitationSubmit = async (evt) => {
     evt.preventDefault();
-    const response = await createInvitation(
-      formData.email,
+    const response = await axios.post(`${WTWWF_API_URL}/invitations`, {
+      email: formData.email,
       friendGroupID,
-      user.id
-    );
-    if (response.id) toggleIsToastOpen();
+      invitingUserID: user.id,
+    });
+    if (response.data.id) toggleIsToastOpen();
     handleToggleForm();
   };
 
