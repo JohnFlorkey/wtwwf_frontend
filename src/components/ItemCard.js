@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
+  IconButton,
+  Menu,
+  MenuItem,
   Popover,
   Typography,
 } from "@mui/material";
+import MoreIcon from "@mui/icons-material/More";
 import AdditionalDetail from "./AdditionalDetail";
-import { displayDate, displayRuntime } from "../utilities/helper";
 import { addUserItem, removeUserItem } from "../actions/userItem";
 import { removeFriendGroupMediaRecommendation } from "../actions/friendGroupMediaRecommendations";
 
@@ -41,57 +42,69 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
   };
   const open = Boolean(anchorEl);
 
+  const [menuAnchorEl, setMenuAnchorEl] = useState(null);
+  const handleMenuClick = (evt) => {
+    menuAnchorEl ? setMenuAnchorEl(false) : setMenuAnchorEl(evt.currentTarget);
+  };
+  const handleMenuClose = () => {
+    setMenuAnchorEl(null);
+  };
+  const menuOpen = Boolean(menuAnchorEl);
+
   return (
     <div>
-      <Card sx={{ m: 1, width: 154 }}>
-        <CardMedia
-          component="img"
-          image={item.posterURL}
-          alt="movie poster"
-          sx={{ maxWidth: 154 }}
-        />
-        <CardContent>
-          <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-            {item.title}
-          </Typography>
-          <Typography variant="body2">
-            {displayDate(item.releaseDate)}
-          </Typography>
-          {item.runtime ? (
-            <Typography variant="body2">
-              Runtime: {displayRuntime(item.runtime)}
-            </Typography>
-          ) : null}
-        </CardContent>
-        <CardActions>
-          <Button size="small" onClick={handlePopoverOpen}>
-            More
-          </Button>
+      <IconButton
+        onClick={handleMenuClick}
+        sx={{ position: "relative", top: 50, left: 120 }}
+      >
+        <MoreIcon sx={{ color: "whitesmoke" }} />
+        <Menu
+          anchorEl={menuAnchorEl}
+          anchorOrigin={{ vertical: "top", horizontal: "right" }}
+          id="card-menu"
+          keepMounted
+          open={menuOpen}
+          onClose={handleMenuClose}
+        >
+          <MenuItem onClick={handlePopoverOpen}>Details</MenuItem>
           {!friendGroupID ? (
             inUserItemList ? (
-              <Button size="small" onClick={() => removeItem(item, user.id)}>
+              <MenuItem size="small" onClick={() => removeItem(item, user.id)}>
                 Remove
-              </Button>
+              </MenuItem>
             ) : (
-              <Button size="small" onClick={() => addItem(item, user.id)}>
+              <MenuItem size="small" onClick={() => addItem(item, user.id)}>
                 Add
-              </Button>
+              </MenuItem>
             )
           ) : (
-            <Button
+            <MenuItem
               size="small"
               onClick={() => watchedMovie(friendGroupID, item.type, item.id)}
             >
               We Watched It
-            </Button>
+            </MenuItem>
           )}
-        </CardActions>
+        </Menu>
+      </IconButton>
+      <Card sx={{ m: 1, width: 150, height: 300 }}>
+        <CardMedia
+          component="img"
+          image={item.posterURL}
+          alt="movie poster"
+          sx={{ width: 150, height: 225 }}
+        />
+        <CardContent>
+          <Typography variant="body2" sx={{ m: -1, fontWeight: "bold" }}>
+            {item.title}
+          </Typography>
+        </CardContent>
       </Card>
       <Popover
         open={open}
         anchorEl={anchorEl}
-        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-        transformOrigin={{ vertical: "top", horizontal: "left" }}
+        anchorOrigin={{ vertical: "top", horizontal: "left" }}
+        transformOrigin={{ vertical: "center", horizontal: "left" }}
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
