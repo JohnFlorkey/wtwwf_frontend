@@ -1,17 +1,21 @@
-import { TextField } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, IconButton, InputAdornment, TextField } from "@mui/material";
+import ClearIcon from "@mui/icons-material/Clear";
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import useForm from "../customHooks/useForm";
 
 function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
   const INTITIAL_FORM_STATE = { term: "" };
-  const [formData, addFormData] = useForm(INTITIAL_FORM_STATE);
+  const [formData, addFormData, clearFormData] = useForm(INTITIAL_FORM_STATE);
   const [filteredItems, setFilteredItems] = useState(items);
 
-  const setFormData = (evt) => {
+  const handleFormChange = (evt) => {
     const { name, value } = evt.target;
     addFormData(name, value);
+  };
+
+  const handleClearForm = (evt) => {
+    clearFormData(INTITIAL_FORM_STATE);
   };
 
   useEffect(() => {
@@ -32,13 +36,33 @@ function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
 
   return (
     <Box>
-      <TextField
-        id="filter-media"
-        label="Filter"
-        name="term"
-        value={formData.value}
-        onChange={setFormData}
-      />
+      <Box
+        sx={{
+          display: "grid",
+          gap: 1,
+          gridAutoColumns: "1fr",
+          p: 2,
+          borderRadius: 5,
+        }}
+      >
+        <TextField
+          id="filter-media"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={handleClearForm}>
+                  <ClearIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          label="Filter by title, genre, keyword, overview"
+          name="term"
+          onChange={handleFormChange}
+          value={formData.term}
+        />
+      </Box>
+
       <ItemList
         items={filteredItems}
         userMediaList={userMediaList}
