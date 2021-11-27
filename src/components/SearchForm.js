@@ -1,13 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, InputAdornment, TextField } from "@mui/material";
 import useForm from "../customHooks/useForm";
 
 function SearchForm({ type }) {
   const history = useHistory();
   const INITIAL_STATE_SEARCH_FORM = { title: "" };
   const [formData, addFormData] = useForm(INITIAL_STATE_SEARCH_FORM);
-  const setFormData = (evt) => {
+  const handleFormChange = (evt) => {
     const { name, value } = evt.target;
     addFormData(name, value);
   };
@@ -20,17 +20,33 @@ function SearchForm({ type }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <TextField
-        id="serarch-title"
-        label="title"
-        name="title"
-        value={formData.value}
-        variant="outlined"
-        onChange={setFormData}
-      />
-      <Button variant="contained" type="submit">
-        Submit
-      </Button>
+      <Box
+        sx={{
+          display: "grid",
+          gap: 1,
+          gridAutoColumns: "1fr",
+          p: 2,
+          borderRadius: 5,
+        }}
+      >
+        <TextField
+          id="serarch-title"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <Button type="submit" variant="contained">
+                  Submit
+                </Button>
+              </InputAdornment>
+            ),
+          }}
+          label="Search TMDB by Title"
+          name="title"
+          value={formData.title}
+          variant="outlined"
+          onChange={handleFormChange}
+        />
+      </Box>
     </form>
   );
 }

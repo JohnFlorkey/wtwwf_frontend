@@ -1,15 +1,23 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import SearchForm from "./SearchForm";
 import SearchMoviesResultsList from "./SearchMoviesResultsList";
 
 function SearchMovies() {
   return (
-    <Box>
-      <Typography variant="h4">Search</Typography>
-      <SearchForm type="movies" />
-      <SearchMoviesResultsList />
-    </Box>
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      style={{ minHeight: "80vh" }}
+    >
+      <Grid item>
+        <SearchForm type="movies" />
+      </Grid>
+      <Grid item>
+        <SearchMoviesResultsList />
+      </Grid>
+    </Grid>
   );
 }
 

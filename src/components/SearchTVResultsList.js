@@ -36,9 +36,6 @@ function SearchTVResultsList() {
 
   return Object.keys(tvSearchResults).length > 0 && tvSearchResults[page] ? (
     <Box>
-      <Box>
-        <Typography variant="h5">Results</Typography>
-      </Box>
       <ItemList items={tvSearchResults[page]} userMediaList={userTV} />
       <Box>
         <Pagination

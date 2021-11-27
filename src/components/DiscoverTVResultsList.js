@@ -30,9 +30,6 @@ function DiscoverTVResultsList() {
   return Object.keys(tvDiscoverResults).length > 0 &&
     tvDiscoverResults[page] ? (
     <Box>
-      <Box>
-        <Typography variant="h5">Results</Typography>
-      </Box>
       <ItemList items={tvDiscoverResults[page]} userMediaList={userTV} />
       <Box>
         <Pagination

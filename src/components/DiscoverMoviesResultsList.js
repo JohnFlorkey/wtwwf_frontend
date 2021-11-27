@@ -33,9 +33,6 @@ function DiscoverMovieResultsList() {
   return Object.keys(movieDiscoverResults).length > 0 &&
     movieDiscoverResults[page] ? (
     <Box>
-      <Box>
-        <Typography variant="h5">Results</Typography>
-      </Box>
       <ItemList items={movieDiscoverResults[page]} userMediaList={userMovies} />
       <Box>
         <Pagination
