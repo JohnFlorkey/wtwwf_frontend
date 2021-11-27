@@ -38,17 +38,6 @@ function SearchTVResultsList() {
     <Box>
       <Box>
         <Typography variant="h5">Results</Typography>
-        <Pagination
-          count={tvSearchResults.totalPages}
-          page={page}
-          renderItem={(item) => (
-            <PaginationItem
-              component={RouterLink}
-              to={`/search/tv?title=${tvSearchResults.searchTerm}&page=${item.page}`}
-              {...item}
-            />
-          )}
-        />
       </Box>
       <ItemList items={tvSearchResults[page]} userMediaList={userTV} />
       <Box>

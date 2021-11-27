@@ -35,17 +35,6 @@ function DiscoverMovieResultsList() {
     <Box>
       <Box>
         <Typography variant="h5">Results</Typography>
-        <Pagination
-          count={movieDiscoverResults.totalPages}
-          page={page}
-          renderItem={(item) => (
-            <PaginationItem
-              component={RouterLink}
-              to={`/discover/movies?page=${item.page}`}
-              {...item}
-            />
-          )}
-        />
       </Box>
       <ItemList items={movieDiscoverResults[page]} userMediaList={userMovies} />
       <Box>
