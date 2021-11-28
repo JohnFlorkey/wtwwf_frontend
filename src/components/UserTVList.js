@@ -9,10 +9,10 @@ function UserTVList() {
   const { user, userTV } = useSelector((store) => store);
 
   useEffect(() => {
-    if (user.id && Object.keys(userTV).length === 0) {
+    if (user.id) {
       dispatch(getUserTV(user.id));
     }
-  }, [dispatch, user, userTV]);
+  }, [dispatch, user.id]);
 
   const tv = [];
   Object.values(userTV).map((m) => tv.push(m));

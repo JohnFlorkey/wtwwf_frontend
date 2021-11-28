@@ -10,10 +10,10 @@ function UserMovieList() {
   const { user, userMovies } = useSelector((store) => store);
 
   useEffect(() => {
-    if (user.id && Object.keys(userMovies).length === 0) {
+    if (user.id) {
       dispatch(getUserMovies(user.id));
     }
-  }, [dispatch, user, userMovies]);
+  }, [dispatch, user.id]);
 
   const movies = Object.values(userMovies);
 
