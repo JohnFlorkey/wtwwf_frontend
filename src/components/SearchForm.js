@@ -42,9 +42,10 @@ function SearchForm({ type }) {
           }}
           label="Search TMDB by Title"
           name="title"
+          onChange={handleFormChange}
+          sx={{ backgroundColor: "#fff" }}
           value={formData.title}
           variant="outlined"
-          onChange={handleFormChange}
         />
       </Box>
     </form>

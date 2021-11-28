@@ -68,6 +68,7 @@ function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
           label="Filter by title, genre, keyword, overview, or watch provider"
           name="term"
           onChange={handleFormChange}
+          sx={{ backgroundColor: "#fff" }}
           value={formData.term}
         />
       </Box>
