@@ -29,6 +29,15 @@ function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
           ) ||
           i.keywords.some((k) =>
             k.toLowerCase().includes(formData.term.toLowerCase())
+          ) ||
+          i.watchProviders.buyWatchProviders.some((w) =>
+            w.providerName.toLowerCase().includes(formData.term.toLowerCase())
+          ) ||
+          i.watchProviders.rentWatchProviders.some((w) =>
+            w.providerName.toLowerCase().includes(formData.term.toLowerCase())
+          ) ||
+          i.watchProviders.flatrateWatchProviders.some((w) =>
+            w.providerName.toLowerCase().includes(formData.term.toLowerCase())
           )
       )
     );
@@ -56,7 +65,7 @@ function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
               </InputAdornment>
             ),
           }}
-          label="Filter by title, genre, keyword, overview"
+          label="Filter by title, genre, keyword, overview, or watch provider"
           name="term"
           onChange={handleFormChange}
           value={formData.term}
