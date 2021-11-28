@@ -5,7 +5,6 @@ import {
   AppBar,
   Box,
   Button,
-  Divider,
   Menu,
   MenuItem,
   Toolbar,
@@ -71,10 +70,6 @@ function NavBar() {
   const handleUserProfileClick = () => {
     handleUserMenuClose();
     history.push("/profile");
-  };
-  const handleUserFriendGroupsClick = () => {
-    handleUserMenuClose();
-    history.push("/friendGroups");
   };
   const isUserMenuOpen = Boolean(userAnchorEl);
 
