@@ -27,9 +27,11 @@ function FriendGroupList() {
       <Typography variant="h3">My Friend Groups</Typography>
       {!showForm ? <Button onClick={toggleForm}>+ Friend Group</Button> : null}
       {showForm ? <FriendGroupForm toggleForm={toggleForm} /> : null}
-      {Object.values(friendGroups).map((g) => (
-        <FriendGroupCard key={g.id} friendGroup={g} />
-      ))}
+      <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+        {Object.values(friendGroups).map((g) => (
+          <FriendGroupCard key={g.id} friendGroup={g} />
+        ))}
+      </Box>
     </Box>
   ) : null;
 }

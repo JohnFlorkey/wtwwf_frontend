@@ -11,7 +11,7 @@ function FriendGroupMember({ friendGroupID, member }) {
     dispatch(removeFriendGroupMember(friendGroupID, member.userID));
   };
   return (
-    <Box>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
       <Typography variant="body1">{member.username}</Typography>
       <IconButton onClick={deleteFriendGroupMember}>
         <DeleteIcon />
