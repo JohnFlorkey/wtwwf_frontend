@@ -5,9 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "./store";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 
 const theme = createTheme({
+  palette: {
+    background: {
+      default: "#EEEEEE",
+    },
+  },
   typography: {
     fontFamily: "'Open Sans','Lato', 'sans-serif'",
   },
@@ -18,6 +23,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <App />
         </ThemeProvider>
       </Provider>
