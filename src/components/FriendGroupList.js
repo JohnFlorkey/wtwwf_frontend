@@ -17,10 +17,10 @@ function FriendGroupList() {
   const { friendGroups, user } = useSelector((store) => store);
 
   useEffect(() => {
-    if (Object.keys(friendGroups).length === 0) {
+    if (user.id) {
       dispatch(getFriendGroups(user.id));
     }
-  }, [dispatch, friendGroups, user]);
+  }, [dispatch, user]);
 
   return Object.keys(friendGroups).length > 0 ? (
     <Box sx={{ px: 2 }}>
