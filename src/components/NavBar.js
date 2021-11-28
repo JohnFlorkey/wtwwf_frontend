@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   AppBar,
   Box,
@@ -10,20 +10,9 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { getUser } from "../actions/user";
 
 function NavBar() {
-  const dispatch = useDispatch();
   const { user } = useSelector((store) => store);
-
-  /**
-   * temporary for mocking user state so we can get the user based components created
-   */
-  useEffect(() => {
-    if (Object.keys(user).length === 0) {
-      dispatch(getUser(1));
-    }
-  }, [dispatch, user]);
 
   const history = useHistory();
   const [searchAnchorEl, setSearchAnchorEl] = useState(null);
