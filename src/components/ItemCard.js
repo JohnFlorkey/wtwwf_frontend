@@ -87,7 +87,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
           )}
         </Menu>
       </IconButton>
-      <Card sx={{ m: 1, width: 150, height: 300 }}>
+      <Card sx={{ mt: -5, mb: 2, mx: 1, width: 150, height: 300 }}>
         <CardMedia
           component="img"
           image={item.posterURL}
