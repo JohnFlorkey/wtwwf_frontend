@@ -55,7 +55,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
     <div>
       <IconButton
         onClick={handleMenuClick}
-        sx={{ position: "relative", top: 50, left: 120 }}
+        sx={{ position: "relative", top: 0, left: 120 }}
       >
         <MoreIcon sx={{ color: "whitesmoke" }} />
         <Menu
