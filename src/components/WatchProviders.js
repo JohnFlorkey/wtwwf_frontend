@@ -1,5 +1,11 @@
 import React from "react";
-import { Box, Stack, Tooltip, Typography } from "@mui/material";
+import {
+  Box,
+  ImageList,
+  ImageListItem,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 
 function WatchProviders({ watchProviders }) {
   const { buyWatchProviders, rentWatchProviders, flatrateWatchProviders } =
@@ -10,37 +16,59 @@ function WatchProviders({ watchProviders }) {
       {buyWatchProviders.length > 0 ? (
         <Box>
           <Typography variant="body2">Buy:</Typography>
-          <Stack direction="row">
+          <ImageList
+            cols={buyWatchProviders.length}
+            rowHeight={45}
+            sx={{
+              my: 0,
+            }}
+          >
             {buyWatchProviders.map((w) => (
-              <Tooltip key={w.providerName} title={w.providerName}>
-                <img key={w.providerID} src={w.logoPath} alt={w.provideName} />
-              </Tooltip>
+              <ImageListItem key={w.providerID} sx={{ maxWidth: 45 }}>
+                <Tooltip title={w.providerName}>
+                  <img src={w.logoPath} alt={w.provideName} />
+                </Tooltip>
+              </ImageListItem>
             ))}
-          </Stack>
+          </ImageList>
         </Box>
       ) : null}
       {rentWatchProviders.length > 0 ? (
         <Box>
           <Typography variant="body2">Rent:</Typography>
-          <Stack direction="row">
+          <ImageList
+            cols={rentWatchProviders.length}
+            sx={{
+              my: 0,
+            }}
+          >
             {rentWatchProviders.map((w) => (
-              <Tooltip key={w.providerName} title={w.providerName}>
-                <img key={w.providerID} src={w.logoPath} alt={w.provideName} />
-              </Tooltip>
+              <ImageListItem key={w.providerName} sx={{ maxWidth: 45 }}>
+                <Tooltip title={w.providerName}>
+                  <img src={w.logoPath} alt={w.provideName} />
+                </Tooltip>
+              </ImageListItem>
             ))}
-          </Stack>
+          </ImageList>
         </Box>
       ) : null}
       {flatrateWatchProviders.length > 0 ? (
         <Box>
           <Typography variant="body2">Subscription:</Typography>
-          <Stack direction="row">
+          <ImageList
+            cols={flatrateWatchProviders.length}
+            sx={{
+              my: 0,
+            }}
+          >
             {flatrateWatchProviders.map((w) => (
-              <Tooltip key={w.providerName} title={w.providerName}>
-                <img key={w.providerID} src={w.logoPath} alt={w.provideName} />
-              </Tooltip>
+              <ImageListItem key={w.providerName} sx={{ maxWidth: 45 }}>
+                <Tooltip title={w.providerName}>
+                  <img src={w.logoPath} alt={w.provideName} />
+                </Tooltip>
+              </ImageListItem>
             ))}
-          </Stack>
+          </ImageList>
         </Box>
       ) : null}
     </Box>
