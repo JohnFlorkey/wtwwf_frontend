@@ -18,7 +18,7 @@ function UserMovieList() {
   const movies = Object.values(userMovies);
 
   return (
-    <Box>
+    <Box sx={{ px: 2 }}>
       <Typography variant="h4">My Movies</Typography>
       <ItemFilter items={movies} userMediaList={userMovies} />
     </Box>

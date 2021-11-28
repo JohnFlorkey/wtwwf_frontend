@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import SearchForm from "./SearchForm";
 import SearchTVResultsList from "./SearchTVResultsList";
 
@@ -10,7 +10,12 @@ function SearchTV() {
       direction="column"
       justifyContent="center"
       style={{ minHeight: "80vh" }}
+      sx={{ p: 2 }}
     >
+      <Grid item>
+        <Typography variant="h4">Search TV</Typography>
+      </Grid>
+
       <Grid item>
         <SearchForm type="tv" />
       </Grid>

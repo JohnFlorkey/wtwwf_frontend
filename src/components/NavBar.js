@@ -82,47 +82,48 @@ function NavBar() {
             to="/"
             sx={{ color: "white", display: "inline", gridColumn: "1/2" }}
           >
-            <Typography variant="h5">WTWWF</Typography>
+            <Typography sx={{ fontWeight: "bold", fontSize: 24 }}>
+              WTWWF
+            </Typography>
           </Button>
-          <Button
-            component={RouterLink}
-            to="/movies"
-            sx={{ color: "white", gridColumn: "5/6", mx: 1 }}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              gridColumn: "5/12",
+            }}
           >
-            <Typography sx={{ color: "white" }}>My Movies </Typography>
-          </Button>
-          <Button
-            component={RouterLink}
-            to="/tv"
-            sx={{ color: "white", gridColumn: "6/7", mx: 1 }}
-          >
-            <Typography sx={{ color: "white" }}>My TV </Typography>
-          </Button>
-          <Button
-            component={RouterLink}
-            to="/friendGroups"
-            sx={{ color: "white", gridColumn: "7/9", mx: 1 }}
-          >
-            <Typography sx={{ color: "white" }}>My Friend Groups</Typography>
-          </Button>
-          <Button
-            onClick={handleSearchMenuOpen}
-            sx={{ gridColumn: "9/10", mx: 1 }}
-          >
-            <Typography sx={{ color: "white" }}>Search</Typography>
-          </Button>
-          <Button
-            onClick={handleDiscoverMenuOpen}
-            sx={{ gridColumn: "10/11", mx: 1 }}
-          >
-            <Typography sx={{ color: "white" }}>Discover</Typography>
-          </Button>
-          <Button
-            onClick={handleUserMenuOpen}
-            sx={{ gridColumn: "11/12", mx: 1 }}
-          >
-            <Typography sx={{ color: "white" }}>{user.username}</Typography>
-          </Button>
+            <Button component={RouterLink} sx={{ mx: 1 }} to="/movies">
+              <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                My Movies{" "}
+              </Typography>
+            </Button>
+            <Button component={RouterLink} sx={{ mx: 1 }} to="/tv">
+              <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                My TV{" "}
+              </Typography>
+            </Button>
+            <Button component={RouterLink} sx={{ mx: 1 }} to="/friendGroups">
+              <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                My Friend Groups
+              </Typography>
+            </Button>
+            <Button onClick={handleSearchMenuOpen} sx={{ mx: 1 }}>
+              <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                Search
+              </Typography>
+            </Button>
+            <Button onClick={handleDiscoverMenuOpen} sx={{ mx: 1 }}>
+              <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                Discover
+              </Typography>
+            </Button>
+            <Button onClick={handleUserMenuOpen} sx={{ mx: 1 }}>
+              <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                {user.username}
+              </Typography>
+            </Button>
+          </Box>
           <Menu
             anchorEl={searchAnchorEl}
             anchorOrigin={{ vertical: "bottom", horizontal: "center" }}

@@ -56,9 +56,9 @@ function FriendGroupCard({ friendGroup }) {
   };
 
   return (
-    <Card sx={{ m: 1, minWidth: 350, maxWidth: 350 }}>
+    <Card sx={{ mr: 2, my: 1, minWidth: 350, maxWidth: 350 }}>
       <CardContent sx={{ paddingBottom: 0 }}>
-        <Typography variant="h4">{friendGroup.name}</Typography>
+        <Typography variant="h5">{friendGroup.name}</Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap" }}>
           {Object.values(friendGroup.members).map((m, i) =>
             i < numberOfMembersToDisplay ? (

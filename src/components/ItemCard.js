@@ -55,7 +55,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
     <div>
       <IconButton
         onClick={handleMenuClick}
-        sx={{ position: "relative", top: 0, left: 120 }}
+        sx={{ position: "relative", top: 0, left: 110 }}
       >
         <MoreIcon sx={{ color: "whitesmoke" }} />
         <Menu
@@ -87,7 +87,7 @@ function ItemCard({ item, inUserItemList = false, friendGroupID = 0 }) {
           )}
         </Menu>
       </IconButton>
-      <Card sx={{ mt: -5, mb: 2, mx: 1, width: 150, height: 300 }}>
+      <Card sx={{ mt: -5, mb: 2, mr: 2, width: 150, height: 300 }}>
         <CardMedia
           component="img"
           image={item.posterURL}

@@ -23,8 +23,8 @@ function FriendGroupList() {
   }, [dispatch, friendGroups, user]);
 
   return Object.keys(friendGroups).length > 0 ? (
-    <Box>
-      <Typography variant="h3">My Friend Groups</Typography>
+    <Box sx={{ px: 2 }}>
+      <Typography variant="h4">My Friend Groups</Typography>
       {!showForm ? <Button onClick={toggleForm}>+ Friend Group</Button> : null}
       {showForm ? <FriendGroupForm toggleForm={toggleForm} /> : null}
       <Box sx={{ display: "flex", flexWrap: "wrap" }}>

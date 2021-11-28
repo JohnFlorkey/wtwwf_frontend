@@ -19,7 +19,7 @@ function FriendGroupTVList() {
     : [];
 
   return (
-    <Box>
+    <Box sx={{ px: 2 }}>
       <Typography variant="h3">
         {friendGroupMediaRecommendations.name} TV
       </Typography>

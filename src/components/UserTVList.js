@@ -18,7 +18,7 @@ function UserTVList() {
   Object.values(userTV).map((m) => tv.push(m));
 
   return (
-    <Box>
+    <Box sx={{ px: 2 }}>
       <Typography variant="h4">My TV</Typography>
       <ItemFilter items={tv} userMediaList={userTV} />
     </Box>

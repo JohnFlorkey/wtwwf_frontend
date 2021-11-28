@@ -47,11 +47,11 @@ function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
     <Box>
       <Box
         sx={{
+          borderRadius: 5,
           display: "grid",
           gap: 1,
           gridAutoColumns: "1fr",
-          p: 2,
-          borderRadius: 5,
+          my: 2,
         }}
       >
         <TextField

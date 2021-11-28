@@ -29,7 +29,11 @@ function DiscoverTVResultsList() {
 
   return Object.keys(tvDiscoverResults).length > 0 &&
     tvDiscoverResults[page] ? (
-    <Box>
+    <Box sx={{ px: 2 }}>
+      <Typography sx={{ mb: 1 }} variant="h4">
+        Discover TV
+      </Typography>
+
       <ItemList items={tvDiscoverResults[page]} userMediaList={userTV} />
       <Box>
         <Pagination

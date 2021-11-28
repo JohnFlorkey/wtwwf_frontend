@@ -32,7 +32,10 @@ function DiscoverMovieResultsList() {
 
   return Object.keys(movieDiscoverResults).length > 0 &&
     movieDiscoverResults[page] ? (
-    <Box>
+    <Box sx={{ px: 2 }}>
+      <Typography sx={{ mb: 1 }} variant="h4">
+        Discover Movies
+      </Typography>
       <ItemList items={movieDiscoverResults[page]} userMediaList={userMovies} />
       <Box>
         <Pagination
