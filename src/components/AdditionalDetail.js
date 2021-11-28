@@ -24,21 +24,25 @@ function AdditionalDetail({ item }) {
         }}
       >
         <Box sx={{ gridRow: 1, gridColumn: "1/2" }}>
-          <Typography variant="body2">Release Date:</Typography>
+          <Typography variant="body2">Released:</Typography>
         </Box>
         <Box sx={{ gridRow: 1, gridColumn: "2/6" }}>
           <Typography variant="body2">
             {displayDate(item.releaseDate)}
           </Typography>
         </Box>
-        <Box sx={{ gridRow: 2, gridColumn: "1/2" }}>
-          <Typography variant="body2">Runtime:</Typography>
-        </Box>
-        <Box sx={{ gridRow: 2, gridColumn: "2/6" }}>
-          <Typography variant="body2">
-            {displayRuntime(item.runtime)}
-          </Typography>
-        </Box>
+        {item.runtime ? (
+          <Box sx={{ gridRow: 2, gridColumn: "1/2" }}>
+            <Typography variant="body2">Runtime:</Typography>
+          </Box>
+        ) : null}
+        {item.runtime ? (
+          <Box sx={{ gridRow: 2, gridColumn: "2/6" }}>
+            <Typography variant="body2">
+              {displayRuntime(item.runtime)}
+            </Typography>
+          </Box>
+        ) : null}
         {item.genres.length > 0 ? (
           <Box sx={{ gridRow: 3, gridColumn: "1/2" }}>
             <Typography variant="body2">Genres:</Typography>
