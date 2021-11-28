@@ -79,7 +79,7 @@ function NavBar() {
   const isUserMenuOpen = Boolean(userAnchorEl);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, mb: 2 }}>
       <AppBar position="fixed">
         <Toolbar>
           <Typography
