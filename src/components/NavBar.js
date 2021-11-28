@@ -122,10 +122,10 @@ function NavBar() {
           </Button>
           <Menu
             anchorEl={searchAnchorEl}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             id="search-menu"
             keepMounted
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
+            transformOrigin={{ vertical: "top", horizontal: "center" }}
             open={isSearchMenuOpen}
             onClose={handleSearchMenuClose}
           >
@@ -134,10 +134,10 @@ function NavBar() {
           </Menu>
           <Menu
             anchorEl={discoverAnchorEl}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             id="discover-menu"
             keepMounted
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
+            transformOrigin={{ vertical: "top", horizontal: "center" }}
             open={isDiscoverMenuOpen}
             onClose={handleDiscoverMenuClose}
           >
@@ -146,19 +146,14 @@ function NavBar() {
           </Menu>
           <Menu
             anchorEl={userAnchorEl}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             id="user-menu"
             keepMounted
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
+            transformOrigin={{ vertical: "top", horizontal: "center" }}
             open={isUserMenuOpen}
             onClose={handleUserMenuClose}
           >
-            <Typography sx={{ mx: 2 }}>Manage</Typography>
-            <Divider />
             <MenuItem onClick={handleUserProfileClick}>My Profile</MenuItem>
-            <MenuItem onClick={handleUserFriendGroupsClick}>
-              My Friend Groups
-            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
