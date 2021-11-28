@@ -1,9 +1,16 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import WatchProviders from "./WatchProviders";
 import { displayDate, displayRuntime } from "../utilities/helper";
+import useToggle from "../customHooks/useToggle";
 
 function AdditionalDetail({ item }) {
+  const [isSeeAllOverView, setIsSeeAllOverview] = useToggle(false);
+
+  const handleSeeAllOverViewClick = (evt) => {
+    setIsSeeAllOverview(isSeeAllOverView ? false : true);
+  };
+
   return (
     <div>
       <Box
@@ -45,8 +52,24 @@ function AdditionalDetail({ item }) {
         <Box sx={{ gridRow: 4, gridColumn: "1/2" }}>
           <Typography variant="body2">Overview:</Typography>
         </Box>
-        <Box sx={{ gridRow: 4, gridColumn: "2/6" }}>
-          <Typography variant="body2">{item.overview}</Typography>
+        <Box sx={{ display: "grid", gridRow: 4, gridColumn: "2/6" }}>
+          <Typography
+            component="div"
+            sx={{
+              overflow: "hidden",
+              maxHeight: isSeeAllOverView ? null : 60,
+              textOverflow: "ellipsis",
+            }}
+            variant="body2"
+          >
+            {item.overview}
+          </Typography>
+          <Button
+            onClick={handleSeeAllOverViewClick}
+            sx={{ alignSelf: "flex-end" }}
+          >
+            See {isSeeAllOverView ? "Less" : "All"}
+          </Button>
         </Box>
         {Object.keys(item.watchProviders).length > 0 ? (
           <Box sx={{ gridRow: 5, gridColumn: "1/2" }}>
