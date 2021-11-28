@@ -76,43 +76,51 @@ function NavBar() {
   return (
     <Box sx={{ flexGrow: 1, mb: 2 }}>
       <AppBar position="fixed">
-        <Toolbar>
-          <Typography
-            variant="h6"
+        <Toolbar sx={{ display: "grid", gridAutoColumns: "1fr" }}>
+          <Button
             component={RouterLink}
             to="/"
-            sx={{ color: "white", flexGrow: 1 }}
+            sx={{ color: "white", display: "inline", gridColumn: "1/2" }}
           >
-            WTWWF
-          </Typography>
+            <Typography variant="h5">WTWWF</Typography>
+          </Button>
           <Button
             component={RouterLink}
             to="/movies"
-            sx={{ color: "white", mx: 1 }}
+            sx={{ color: "white", gridColumn: "5/6", mx: 1 }}
           >
             <Typography sx={{ color: "white" }}>My Movies </Typography>
           </Button>
           <Button
             component={RouterLink}
             to="/tv"
-            sx={{ color: "white", mx: 1 }}
+            sx={{ color: "white", gridColumn: "6/7", mx: 1 }}
           >
             <Typography sx={{ color: "white" }}>My TV </Typography>
           </Button>
           <Button
             component={RouterLink}
             to="/friendGroups"
-            sx={{ color: "white", mx: 1 }}
+            sx={{ color: "white", gridColumn: "7/9", mx: 1 }}
           >
             <Typography sx={{ color: "white" }}>My Friend Groups</Typography>
           </Button>
-          <Button onClick={handleSearchMenuOpen} sx={{ mx: 1 }}>
+          <Button
+            onClick={handleSearchMenuOpen}
+            sx={{ gridColumn: "9/10", mx: 1 }}
+          >
             <Typography sx={{ color: "white" }}>Search</Typography>
           </Button>
-          <Button onClick={handleDiscoverMenuOpen} sx={{ mx: 1 }}>
+          <Button
+            onClick={handleDiscoverMenuOpen}
+            sx={{ gridColumn: "10/11", mx: 1 }}
+          >
             <Typography sx={{ color: "white" }}>Discover</Typography>
           </Button>
-          <Button onClick={handleUserMenuOpen} sx={{ mx: 1 }}>
+          <Button
+            onClick={handleUserMenuOpen}
+            sx={{ gridColumn: "11/12", mx: 1 }}
+          >
             <Typography sx={{ color: "white" }}>{user.username}</Typography>
           </Button>
           <Menu
