@@ -146,7 +146,9 @@ function NavBar() {
             open={isUserMenuOpen}
             onClose={handleUserMenuClose}
           >
-            <MenuItem onClick={handleUserProfileClick}>My Profile</MenuItem>
+            <MenuItem disabled onClick={handleUserProfileClick}>
+              My Profile
+            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
