@@ -1,2 +1,4 @@
 export const WTWWF_API_URL =
-  process.env.WTWWF_API_URL || "http://localhost:3002";
+  process.env.REACT_APP_WTWWF_API_URL || "http://localhost:3002";
+
+console.log(WTWWF_API_URL);
