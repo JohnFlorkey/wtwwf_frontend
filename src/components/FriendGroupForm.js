@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createFriendGroup } from "../actions/friendGroups";
@@ -19,15 +19,27 @@ function FriendGroupForm({ toggleForm }) {
   };
   return (
     <form onSubmit={addFriendGroup}>
-      <TextField
-        id="new-friendgroup"
-        label="Name"
-        name="name"
-        value={formData.name}
-        onChange={setFormData}
-      />
-      <Button type="submit">Create</Button>
-      <Button onClick={toggleForm}>Cancel</Button>
+      <Box sx={{ alignContents: "center", display: "flex", my: 2 }}>
+        <TextField
+          id="new-friendgroup"
+          label="Name"
+          name="name"
+          onChange={setFormData}
+          value={formData.name}
+          sx={{ backgroundColor: "#fff", width: 350 }}
+        />
+        <Button
+          color="success"
+          sx={{ mx: 2 }}
+          type="submit"
+          variant="contained"
+        >
+          Create
+        </Button>
+        <Button color="error" onClick={toggleForm} variant="contained">
+          Cancel
+        </Button>
+      </Box>
     </form>
   );
 }

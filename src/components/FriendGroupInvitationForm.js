@@ -36,18 +36,24 @@ function FriendGroupInvitationForm({
         id="invitation-email"
         label="Email"
         name="email"
-        value={formData.email}
         onChange={setFormData}
+        sx={{ my: 1 }}
+        value={formData.email}
       />
       <TextField
         id="personal-message"
         label="Personal Message"
         name="personalMessage"
-        value={formData.personalMessage}
         onChange={setFormData}
+        value={formData.personalMessage}
+        sx={{ mb: 1 }}
       />
-      <Button type="submit">Send Invitation</Button>
-      <Button onClick={handleToggleForm}>Cancel</Button>
+      <Button color="success" sx={{ mr: 1 }} type="submit" variant="contained">
+        Send Invitation
+      </Button>
+      <Button color="error" onClick={handleToggleForm} variant="contained">
+        Cancel
+      </Button>
     </form>
   );
 }
