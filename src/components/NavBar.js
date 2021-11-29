@@ -8,6 +8,7 @@ import {
   Menu,
   MenuItem,
   Toolbar,
+  Tooltip,
   Typography,
 } from "@mui/material";
 
@@ -71,9 +72,11 @@ function NavBar() {
             to="/"
             sx={{ color: "white", display: "inline", gridColumn: "1/2" }}
           >
-            <Typography sx={{ fontWeight: "bold", fontSize: 24 }}>
-              WTWWF
-            </Typography>
+            <Tooltip title="What To Watch With Friends">
+              <Typography sx={{ fontWeight: "bold", fontSize: 24 }}>
+                WTWWF
+              </Typography>
+            </Tooltip>
           </Button>
           <Box
             sx={{
