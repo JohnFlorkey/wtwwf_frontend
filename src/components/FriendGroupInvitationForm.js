@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import useForm from "../customHooks/useForm";
@@ -48,12 +48,19 @@ function FriendGroupInvitationForm({
         value={formData.personalMessage}
         sx={{ mb: 1 }}
       />
-      <Button color="success" sx={{ mr: 1 }} type="submit" variant="contained">
-        Send Invitation
-      </Button>
-      <Button color="error" onClick={handleToggleForm} variant="contained">
-        Cancel
-      </Button>
+      <Box sx={{ mb: 1 }}>
+        <Button
+          color="success"
+          sx={{ mr: 1 }}
+          type="submit"
+          variant="contained"
+        >
+          Send Invitation
+        </Button>
+        <Button color="error" onClick={handleToggleForm} variant="contained">
+          Cancel
+        </Button>
+      </Box>
     </form>
   );
 }

@@ -89,7 +89,7 @@ function FriendGroupCard({ friendGroup }) {
           ) : null}
         </Box>
       </CardContent>
-      <CardActions sx={{ mx: 1 }}>
+      <CardActions sx={{ mx: 1, pb: 2 }}>
         <Typography sx={{ gridRow: 1, gridColumn: "1/3" }} variant="body2">
           Recommendations:
         </Typography>
