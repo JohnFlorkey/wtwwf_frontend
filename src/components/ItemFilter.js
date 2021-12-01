@@ -51,6 +51,7 @@ function ItemFilter({ items, userMediaList = [], friendGroupID = 0 }) {
           display: "grid",
           gap: 1,
           gridAutoColumns: "1fr",
+          maxWidth: 750,
           my: 2,
         }}
       >

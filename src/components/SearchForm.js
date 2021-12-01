@@ -1,7 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { Box, Button, InputAdornment, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import useForm from "../customHooks/useForm";
+import { display } from "@mui/system";
 
 function SearchForm({ type }) {
   const history = useHistory();
@@ -18,6 +25,13 @@ function SearchForm({ type }) {
     history.push(`/search/${type}?title=${formData.title}&page=${page}`);
   };
 
+  let displayType = "";
+  if (type === "movies") {
+    displayType = "Movies";
+  } else if (type === "tv") {
+    displayType = "TV";
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <Box
@@ -27,8 +41,10 @@ function SearchForm({ type }) {
           gap: 1,
           gridAutoColumns: "1fr",
           my: 2,
+          px: "25%",
         }}
       >
+        <Typography variant="h4">Search {displayType}</Typography>
         <TextField
           id="serarch-title"
           InputProps={{
@@ -43,7 +59,7 @@ function SearchForm({ type }) {
           label="Search TMDB by Title"
           name="title"
           onChange={handleFormChange}
-          sx={{ backgroundColor: "#fff" }}
+          sx={{ backgroundColor: "#fff", maxWidth: 750, minWidth: 300 }}
           value={formData.title}
           variant="outlined"
         />

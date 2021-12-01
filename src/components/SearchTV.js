@@ -13,10 +13,6 @@ function SearchTV() {
       sx={{ p: 2 }}
     >
       <Grid item>
-        <Typography variant="h4">Search TV</Typography>
-      </Grid>
-
-      <Grid item>
         <SearchForm type="tv" />
       </Grid>
       <Grid item>

@@ -12,9 +12,9 @@ function SearchMovies() {
       style={{ minHeight: "80vh" }}
       sx={{ px: 2 }}
     >
-      <Grid item>
+      {/* <Grid item>
         <Typography variant="h4">Search Movies</Typography>
-      </Grid>
+      </Grid> */}
       <Grid item>
         <SearchForm type="movies" />
       </Grid>
