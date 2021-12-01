@@ -5,12 +5,14 @@ import {
   AppBar,
   Box,
   Button,
+  IconButton,
   Menu,
   MenuItem,
   Toolbar,
   Tooltip,
   Typography,
 } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function NavBar() {
   const { user } = useSelector((store) => store);
@@ -110,11 +112,15 @@ function NavBar() {
                 Discover
               </Typography>
             </Button>
-            <Button onClick={handleUserMenuOpen} sx={{ mx: 1 }}>
+            <IconButton
+              onClick={handleUserMenuOpen}
+              sx={{ color: "white", mx: 1 }}
+            >
+              <AccountCircleIcon sx={{ mr: 1 }} />
               <Typography sx={{ color: "white", fontWeight: "bold" }}>
                 {user.username}
               </Typography>
-            </Button>
+            </IconButton>
           </Box>
           <Menu
             anchorEl={searchAnchorEl}
