@@ -8,6 +8,7 @@ import movieDiscoverResults from "./movieDiscoverResults";
 import tvDiscoverResults from "./tvDiscoverResults";
 import tvSearchResults from "./tvSearchResults";
 import user from "./user";
+import auth from "./auth";
 
 export default combineReducers({
   friendGroups,
@@ -19,4 +20,5 @@ export default combineReducers({
   userMovies,
   user,
   userTV,
+  auth,
 });

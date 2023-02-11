@@ -13,6 +13,7 @@ import FriendGroupMoviesList from "./FriendGroupMoviesList";
 import FriendGroupTVList from "./FriendGroupTVList";
 import Invitation from "./Invitation";
 import SignupForm from "./SignupForm";
+import LoginForm from "./LoginForm";
 
 function Routes() {
   return (
@@ -49,6 +50,9 @@ function Routes() {
       </Route>
       <Route path="/friendGroups">
         <FriendGroupList />
+      </Route>
+      <Route path="/login">
+        <LoginForm />
       </Route>
       <Route path="/signup">
         <SignupForm />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link as RouterLink, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AppBar,
   Box,
@@ -13,11 +13,13 @@ import {
   Typography,
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { logout } from "../actions/auth";
 
 function NavBar() {
   const { user } = useSelector((store) => store);
 
   const history = useHistory();
+  const dispatch = useDispatch();
   const [searchAnchorEl, setSearchAnchorEl] = useState(null);
   const handleSearchMenuOpen = (evt) => {
     setSearchAnchorEl(evt.currentTarget);
@@ -63,6 +65,11 @@ function NavBar() {
     handleUserMenuClose();
     history.push("/profile");
   };
+  const handleLogoutClick = () => {
+    handleUserMenuClose();
+    dispatch(logout());
+    history.push("/");
+  };
   const isUserMenuOpen = Boolean(userAnchorEl);
 
   return (
@@ -87,21 +94,27 @@ function NavBar() {
               gridColumn: "5/12",
             }}
           >
-            <Button component={RouterLink} sx={{ mx: 1 }} to="/movies">
-              <Typography sx={{ color: "white", fontWeight: "bold" }}>
-                My Movies{" "}
-              </Typography>
-            </Button>
-            <Button component={RouterLink} sx={{ mx: 1 }} to="/tv">
-              <Typography sx={{ color: "white", fontWeight: "bold" }}>
-                My TV{" "}
-              </Typography>
-            </Button>
-            <Button component={RouterLink} sx={{ mx: 1 }} to="/friendGroups">
-              <Typography sx={{ color: "white", fontWeight: "bold" }}>
-                My Friend Groups
-              </Typography>
-            </Button>
+            {user.id && (
+              <Button component={RouterLink} sx={{ mx: 1 }} to="/movies">
+                <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                  My Movies{" "}
+                </Typography>
+              </Button>
+            )}
+            {user.id && (
+              <Button component={RouterLink} sx={{ mx: 1 }} to="/tv">
+                <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                  My TV{" "}
+                </Typography>
+              </Button>
+            )}
+            {user.id && (
+              <Button component={RouterLink} sx={{ mx: 1 }} to="/friendGroups">
+                <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                  My Friend Groups
+                </Typography>
+              </Button>
+            )}
             <Button onClick={handleSearchMenuOpen} sx={{ mx: 1 }}>
               <Typography sx={{ color: "white", fontWeight: "bold" }}>
                 Search
@@ -112,15 +125,23 @@ function NavBar() {
                 Discover
               </Typography>
             </Button>
-            <IconButton
-              onClick={handleUserMenuOpen}
-              sx={{ color: "white", mx: 1 }}
-            >
-              <AccountCircleIcon sx={{ mr: 1 }} />
-              <Typography sx={{ color: "white", fontWeight: "bold" }}>
-                {user.username}
-              </Typography>
-            </IconButton>
+            {user.id ? (
+              <IconButton
+                onClick={handleUserMenuOpen}
+                sx={{ color: "white", mx: 1 }}
+              >
+                <AccountCircleIcon sx={{ mr: 1 }} />
+                <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                  {user.username}
+                </Typography>
+              </IconButton>
+            ) : (
+              <Button component={RouterLink} sx={{ mx: 1 }} to={"/login"}>
+                <Typography sx={{ color: "white", fontWeight: "bold" }}>
+                  Login
+                </Typography>
+              </Button>
+            )}
           </Box>
           <Menu
             anchorEl={searchAnchorEl}
@@ -158,6 +179,7 @@ function NavBar() {
             <MenuItem disabled onClick={handleUserProfileClick}>
               My Profile
             </MenuItem>
+            <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

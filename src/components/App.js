@@ -1,20 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from "./NavBar";
 import Routes from "./Routes";
-import { getUser } from "../actions/user";
+import { getUser, updateUser } from "../actions/user";
+import auth from "../reducers/auth";
 
 function App() {
-  /**
-   * temporary for mocking user state so we can get the user based components created
-   */
-  const dispatch = useDispatch();
-  const { user } = useSelector((store) => store);
-  useEffect(() => {
-    if (Object.keys(user).length === 0) {
-      dispatch(getUser(1));
-    }
-  }, [dispatch, user]);
+  // const { auth } = useSelector((store) => store);
+  // useEffect(() => {
+  //   if (auth.authToken) {
+  //     console.log(auth.authToken);
+  //     const id =
+  //     //  getUser(authToken.id);
+  //   } else {
+  //     // updateUser({});
+  //   }
+  // }, [auth]);
 
   return (
     <div className="App">
